@@ -1,2 +1,2 @@
 # OPG
-Zadania: 
+Zadania/Ulohy: 
