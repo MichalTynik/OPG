@@ -11,8 +11,8 @@ public class uloha2 {
         metody.setID(1);
         metody2.setID(2);
         metody3.setID(3);
-        metody.zobrazi2(metody.getID(), metody.getMeno());
-        metody2.zobrazi2(metody2.getID(), metody2.getMeno());
-        metody3.zobrazi2(metody3.getID(), metody3.getMeno());
+        uloha2Metody.zobrazi2(metody.getID(), metody.getMeno());
+        uloha2Metody.zobrazi2(metody2.getID(), metody2.getMeno());
+        uloha2Metody.zobrazi2(metody3.getID(), metody3.getMeno());
     }
 }
