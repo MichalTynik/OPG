@@ -2,9 +2,9 @@ package src;
 
 
 public class BankovyUcet {
-    private long cu;
-    private String meno;
-    private double peniaze;
+    long cu;
+    String meno;
+    double peniaze;
 
     public BankovyUcet(long cu, String meno, double peniaze) {
         this.cu = cu;
