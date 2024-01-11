@@ -1,3 +1,4 @@
+package lib;
 class Zamestnanec {
     float vyplata = 1100;
 }

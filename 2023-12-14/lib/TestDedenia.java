@@ -1,3 +1,4 @@
+package lib;
 public class TestDedenia {
     public static void main(String[] args) {
         NemeckyOvciak nem = new NemeckyOvciak(); //multilevel inheritance

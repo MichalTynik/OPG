@@ -1,19 +1,22 @@
-
+package src;
 public class Test {
     public static void main(String[] args) {
         Pomaranc p = new Pomaranc("Spanielsko");
         Jablko j = new Jablko("Citronka");
         Banan b = new Banan("zrely");
+        Ovocie2 ovocie = new Ovocie2("Jablko", 300, 10.3,"ovocie","jablko","citronka");
+        Zivocisna ziv = new Zivocisna("Maso", 1200, 30, "zajac");
         System.out.println("----------------------------------------------------------------");
         System.out.println(p.nazov + " | " + p.farba + " | "  + p.povod + " | " + p.vaha + "g");
         System.out.println("----------------------------------------------------------------");
         System.out.println(j.nazov + " | " + j.farba + " | "  + j.odroda + " | " + j.vaha + "g");
         System.out.println("----------------------------------------------------------------");
         System.out.println(b.nazov + " | " + b.farba + " | "  + b.zrelost + " | " + b.vaha + "g");
+        System.out.println("----------------------------------------------------------------");
+        System.out.println(ovocie.getNazovPotraviny());
     }
 
 }
-
 class Ovocie {
     String nazov;
     String farba;
