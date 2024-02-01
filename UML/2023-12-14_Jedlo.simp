@@ -1,0 +1,1171 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="14.10" multi-file="no" uid="simp1a96186866e544028e02802c4316dad8" creation-date="01/12/2024 08:20:14">
+  <meta>
+    <name>2023-12-14_Jedlo</name>
+    <authors>Michal Tynik</authors>
+    <description />
+  </meta>
+  <counters models="2">
+    <entity-names />
+    <entity-ids>
+      <counter>
+        <item-type type-id="package" type="Package" />
+        <value>2</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlPackageDiagram</type>
+        <value>1</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields />
+  </counters>
+  <alias-groups />
+  <management uid="md-82df9766c043418fac2406be9ddb41a1" name="" task-id-sequence="0">
+    <persons>
+      <person id="">
+        <first-name>Michal</first-name>
+        <last-name>Tynik</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-dc177dca12d54d1d8cad780eab3ccc44" name="" order-index="-1" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <parameters />
+      <types>
+        <type id="Java.String" tid="string" name="String" />
+        <type id="Java.double" tid="s-real64" name="double" />
+        <type id="Java.int" tid="s-integer32" name="int" />
+      </types>
+    </custom-types>
+  </types>
+  <items />
+  <models>
+    <model id="p58d8a6ba70b740b4aed99a11444ed924_247936548" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>01/12/2024 08:20:15</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items>
+        <item id="313b5955bc684f0d86481b0a72fc11f1" cid="PKG001" type="package" name="src" creator="" creation-date="01/12/2024 08:20:59">
+          <tagged-values>
+            <tagged-value id="tvc97840403f234897ba4b4671a2f61dbd" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+            <tagged-value id="tv09929495b08e4045911035b95ecd2ace" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="src" />
+          </tagged-values>
+        </item>
+      </abstract-items>
+      <sub-models>
+        <model id="p13276d494dc749c99ff993c26e647d61_702243840" name="src" namespace="src" order-index="2">
+          <meta>
+            <authors>
+              <author> </author>
+            </authors>
+            <description />
+            <creation-date>01/12/2024 08:20:59</creation-date>
+            <change-date>01/01/0001 00:00:00</change-date>
+            <revision-count>0</revision-count>
+            <version />
+          </meta>
+          <tagged-values>
+            <tagged-value id="tvda29965a6fef4ba183d81d41b5341b41" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="src" />
+          </tagged-values>
+          <abstract-items>
+            <item id="3c353280d76d44ed8fd17a9bb8fcc655" cid="PROP005" type="property" name="nazov" owner="c019aed4b5594f11a6eefd9f1104e45e" creation-date="01/12/2024 08:20:59" visibility="private">
+              <tagged-values>
+                <tagged-value id="tvfca7bcdf51b04c6ba4b1d6f09b311926" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="nazov" />
+                <tagged-value id="tv783eaf10052145ada02f391cfafc3408" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv7285de23f49d4f7d94089f0631326a50" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tvba8f37923715419f8137f23e792ff19f" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv1fedc3e8edae42a9b24a21a69d2df629" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1383" />
+                <tagged-value id="tv8ee2a5c1d5a24616b3d1be49e6d16c3c" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="21" />
+                <tagged-value id="tvc33d10b4ca78415d817fdf5f6d6edf80" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tvca450b996fb5406c9ffc3b0a713a735d" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="9749a0babdca4b2da085e81b73f466a7" cid="C002" type="class" name="Rastlinna" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tve821ea610641446aa6dc284242d7f392" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tva8004e8d17854b4e8411f4d01edff237" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Rastlinna" />
+                <tagged-value id="tv3b5220b565a1462db8b329b0637fcebc" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv1f38b4f41e9641c684a161f76f38179b" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tvbd1c297534814f32a89ed0dcb77601ab" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tveb6b856677ee494fb52ef515f86dffd6" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="894" />
+                <tagged-value id="tv0537a31bb9cb475eae63bc48102a0413" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="451" />
+                <tagged-value id="tved9b83f2d5af43d5839a410e80438b4b" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tve9400ec0d25247b0933e7610193226fa" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <owned-items />
+              <attributes>
+                <attribute id="a6b2a63350f404ffdbf16a1652ba0e77e894" cid="PROP004" name="typRastliny" creation-date="01/12/2024 08:20:59" property-ref="7c388fca73a5445fabb71883912e3f76" />
+              </attributes>
+              <operations>
+                <operation id="o6a2e1f454c1e4ddfbd67738502f97377894" cid="OP008" name="Rastlinna" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p8c1b24fc2ff446bea6b4c55fc773b6b9" name="nazovPotraviny" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="p715730329c1149778f9982447e04433b" name="pocetKalorii" type="int" type-id="Java.int" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="p8f829ab91ee1440b9ebec40beaca6c37" name="mnozstvoTuku" type="double" type-id="Java.double" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="p2f54c492217d408d9a897692d72c86c2" name="typRastliny" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <tagged-values>
+                    <tagged-value id="tvea472ca4e0aa40ab9edeb962ae712ecc" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Rastlinna" />
+                    <tagged-value id="tvd05c26239b424335a0d902ab820d1f6e" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv918a6ebcb168415296f3194d07606d7d" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv64a6378759ef41fb88668ba5cc875662" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="961" />
+                    <tagged-value id="tv03235bd8b4664c6082f547cd71c6d179" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="205" />
+                  </tagged-values>
+                </operation>
+                <operation id="o3fa9439488ce43b4937f1f84bfd05605894" cid="OP009" name="getTypRastliny" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tvf3cbef2566b742b39dcd9f8d4106e1c1" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getTypRastliny" />
+                    <tagged-value id="tv2cb5a97a623f4aabb480555af0bd724e" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv0eacfbf6f8e844bababc811305ed403f" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvb72ec587a2cd447987ff43d1018e1710" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1171" />
+                    <tagged-value id="tvf1b7f27278a64137a7858654d3be51e7" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="66" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return typRastliny;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o38e7165996a74788acbe62a954e3e70e894" cid="OP010" name="setTypRastliny" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p23e9b5c442ae46c7ab9540b31468be67" name="typRastliny" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tv216aa3f977d048ec9995b3c2310c9dc1" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setTypRastliny" />
+                    <tagged-value id="tvf2a955f6d6fe46cc8ac38545a339b61b" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tvc6c64a79b3d243b9965471b4deed8817" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv1845b85fec5747d1b958b0128b64fbb4" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1242" />
+                    <tagged-value id="tvcb81c7eaace94fadb8bfa9554172d1c7" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="94" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.typRastliny = typRastliny;
+    </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="c4c286070c74462a819a126b30e2c160" cid="PROP007" type="property" name="druhPovodu" owner="77ef82e325c149988e7ac6ec92f5f05c" creation-date="01/12/2024 08:20:59" visibility="private">
+              <tagged-values>
+                <tagged-value id="tvf8a89041874a469380af34d9bdc3adb7" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="druhPovodu" />
+                <tagged-value id="tv51c6b492c5334fef9ffd4e3d003eb8c6" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv76ee231d03ce478992e5c4bbba24f863" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tv38b93b87cfbb4e6794da078be0bbf063" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv5782caf760c342dbbe7814c4a1f82aa2" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2012" />
+                <tagged-value id="tv6778a9ad5a4845878de5cc2d1a517680" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="26" />
+                <tagged-value id="tvb661afd963ce4da7915f06c154dcf4a8" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tvb29dcbd7cadf4ce0aa1f7da5dd7cb3e4" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="273515141f9b416996064090ea7a7345" cid="PROP006" type="property" name="odroda" owner="c019aed4b5594f11a6eefd9f1104e45e" creation-date="01/12/2024 08:20:59" visibility="private">
+              <tagged-values>
+                <tagged-value id="tve8034ce863c0411dada8a31c3f161283" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="odroda" />
+                <tagged-value id="tv6fbbe6af2758413284c665e107c8b941" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv5b0c56a9005b466899f157c2615c6851" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tv19b1f87bc1f247b8b8dbf8a5b0915154" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv950181e78f634ee999a11a8f59c07df1" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1409" />
+                <tagged-value id="tvfee0a820cee44df5b15383f64316f955" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="22" />
+                <tagged-value id="tvdd4cc1369767455993fd581dc6fd6844" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tv6db51881b2f24d5a8cda3b2006262696" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="41c0ed70d6154a729fbdb9f78e1c15f4" cid="PROP012" type="property" name="odroda" owner="8f91bd2c2c9244399656f237c3db56e0" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv49edde44a42844ad97f09d16c7d423bc" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="odroda" />
+                <tagged-value id="tvff144a3c18db485dbcc3fd3f780bbf4b" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tvca235853ac4b43c9aee6be3726105c93" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tvbe8c6a2daca740b39f570ab642d20ba1" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv7e2afe7c91ed49238d50f39754aaf069" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2050" />
+                <tagged-value id="tv67e943ff44514968acc0ce6406512e49" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="14" />
+                <tagged-value id="tv6ac2cf19c0b845b391e897e0b88bf34a" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tv57a0ad1af67c4e879a82f61854aa5122" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="8f91bd2c2c9244399656f237c3db56e0" cid="C008" type="class" name="Jablko" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv20d2e65e0de5444aa6883e214abee7fc" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tv05ff5db2de0a4395a9a3dae3d7a07b8d" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Jablko" />
+                <tagged-value id="tv7f3fd0e9da774223a8d7fe0409f4d9b3" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tvc51a5ff91d0f4d3c80defa98685c6368" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tv959a1f5a7b16485ba6b1b03f62bdb880" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tvb73578fbb13046f1acf250855c3e8ebc" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2015" />
+                <tagged-value id="tvfa9b9eaafcc5432cac6cb3d39464a03f" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="312" />
+                <tagged-value id="tv744f19c0a8e24eb292b6a99ccc91b8c4" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tv0a87453bc5ff42e585fd6f377d713d7d" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <owned-items />
+              <attributes>
+                <attribute id="ad698fe6a0bcc4b3ab593d6b61820f2b0897" cid="PROP012" name="odroda" creation-date="01/12/2024 08:20:59" property-ref="41c0ed70d6154a729fbdb9f78e1c15f4" />
+              </attributes>
+              <operations>
+                <operation id="o798c605abcbc49abb0601e1f9c44555b897" cid="OP028" name="getOdroda" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tv0e9c011b70fe4c31b6c4887150fa231a" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getOdroda" />
+                    <tagged-value id="tv71dd6390537746cb8406653669f394a2" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv03a8ae026f294f759e486d7b9610f9ae" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv02cdc7f313e143ebb0b83684cc3d8433" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2072" />
+                    <tagged-value id="tv4f93ed1499b8436eb8844f528499e65c" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="58" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return odroda;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o8656d5096c054888a0c60983a6fe068e897" cid="OP029" name="setOdroda" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p6d4b33ba18a94f76b7d7b8d345c8f33f" name="odroda" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tvad1a8256e2014822a53990c25ad43dce" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setOdroda" />
+                    <tagged-value id="tv92ee782ef7f9496cadea8de6f684b020" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv19ee7499c89b4a41839c71b6732783dc" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tve4ab9c7172984833840057af2bd1952c" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2138" />
+                    <tagged-value id="tv6119296fa9eb468aa9bf804ff5c97076" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="76" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.odroda = odroda;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o4c81caa70a7a46db910006bbf28e67b6897" cid="OP030" name="Jablko" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="undefined">
+                  <parameters>
+                    <parameter id="p588e71c14152441593cc35923d4baa8a" name="odroda" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <tagged-values>
+                    <tagged-value id="tvaf80dadd5014428da2d1d2f86b4e43f0" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Jablko" />
+                    <tagged-value id="tv4ce9302181b14319a7c37b2e834707de" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tvfed79ac444b149cbaa15bc3696c2297a" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv13ec36d6854647399a69c78faedd2cfe" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2222" />
+                    <tagged-value id="tvbeb02fe7db9b43a1aeb3d9a4d8639bd5" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="102" />
+                  </tagged-values>
+                </operation>
+              </operations>
+            </item>
+            <item id="033e46e3397348d99e088ca1f3f2904d" cid="C001" type="class" name="Jedlo" creation-date="01/12/2024 08:20:59" visibility="public">
+              <tagged-values>
+                <tagged-value id="tv3879316f001b4a0bbfc60f27f731022d" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tve39d703886ae4e33b96232d2b0539f85" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Jedlo" />
+                <tagged-value id="tv6e05ed1b2f994699a4916cef0831209f" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tvd26e34aa9c2c439ba81f286110563e0c" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tvbae51b9e5b754f03aa6dcc6e757267db" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv8d1fd35f0deb4d02be47c92479a00d01" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="14" />
+                <tagged-value id="tvaf1b2449b53d44c6ba79c8a30a28a9d1" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="878" />
+                <tagged-value id="tv9dd287bd90fd45b6a8be78591ce1684e" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tvb1b08e4926cd4f04b87f1126bc0b58f9" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <owned-items />
+              <attributes>
+                <attribute id="a9aafbc5059bf4559932366e2db76c71e887" cid="PROP001" name="nazovPotraviny" creation-date="01/12/2024 08:20:59" property-ref="fe75b010eb284f6ab26fd3dd307e38f5" />
+                <attribute id="a69b4f26b479441ea9b63e6b039251eeb888" cid="PROP002" name="pocetKalorii" creation-date="01/12/2024 08:20:59" property-ref="5da4580267864293b642560708de5d75" />
+                <attribute id="a71ab1b2500694f7a97c41bd1228b9583888" cid="PROP003" name="mnozstvoTuku" creation-date="01/12/2024 08:20:59" property-ref="bd15d30ecf1e4d0081a9f40f2c4762e5" />
+              </attributes>
+              <operations>
+                <operation id="o78359db83bad486783b5617c62d81fef890" cid="OP001" name="Jedlo" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="pac6fd22c46df4947ad68127e228932f3" name="nazovPotraviny" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="p93b204834aa2418cbb6de6138a5d3789" name="pocetKalorii" type="int" type-id="Java.int" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="pcf904727f3f24d889288a62516e33e13" name="mnozstvoTuku" type="double" type-id="Java.double" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <tagged-values>
+                    <tagged-value id="tv154fd9b7a3f149328d93bba9b36725b3" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Jedlo" />
+                    <tagged-value id="tv46a485cc44634af4ab352a1ca0186056" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tvc16d8eba30c14c5491a0bc8c888640e8" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv85312f42d28d4e41bd5769292380d36f" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="137" />
+                    <tagged-value id="tvdb2fe9e9c6394771a7ad3648947af134" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="212" />
+                  </tagged-values>
+                </operation>
+                <operation id="oe4ad4bf5c6c041a68747723526e3523e893" cid="OP002" name="getNazovPotraviny" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tv187420fd30be41b49a9416fb6ca6b3bf" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getNazovPotraviny" />
+                    <tagged-value id="tv37b62373698241f29010b463ffcd0b5b" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tvebab3e6d99b94c7b92dddbdbf60548a4" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv1b82fe373d4a43b9a8ce1785932cd184" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="355" />
+                    <tagged-value id="tv421ecf9305d445708a34fb7b6fc3cc87" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="72" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return nazovPotraviny;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o6af956d498664559ac05a73ba4c3b8fe894" cid="OP003" name="setNazovPotraviny" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="paea142aeacc046739c881ca69f309b31" name="nazovPotraviny" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tv856dd99f491a437e9075b12e3a76814a" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setNazovPotraviny" />
+                    <tagged-value id="tv6ce7891ce3ea428285112aae7541d383" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tvd0a53de33f8348908dafca596693ee82" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv69c550bbc87848e48aa7d224a734861a" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="433" />
+                    <tagged-value id="tv4a5e74fe99044c4db76a38f537ee0d23" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="106" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.nazovPotraviny = nazovPotraviny;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o8792e2fdc1b44346beca45ce1192f6e2894" cid="OP004" name="getPocetKalorii" creation-date="01/12/2024 08:20:59" type="int" type-id="Java.int" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tvf5836e7587d54359bf56de51dcc7f4d0" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getPocetKalorii" />
+                    <tagged-value id="tv94b2c015b3944c758fe5b31994cbb4bc" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv8e4151fa7a4145ddb834d5cdf9236489" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv5bc3c1932d89481eba4879e3e610e5b6" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="545" />
+                    <tagged-value id="tv26294033e1d64827a450e1ee6e783eff" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="65" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return pocetKalorii;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o16bec9f92f944286a72602dbe460099e894" cid="OP005" name="setPocetKalorii" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="pb3ec5582855645268572877e130eac2b" name="pocetKalorii" type="int" type-id="Java.int" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tvd29abb4548d742ea9eb6d21bf7b9a672" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setPocetKalorii" />
+                    <tagged-value id="tv29cce56a75e8446e8a119e15c043c659" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tvf6dcb9bff5794dd19af1158cd59f20c5" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv7feca9a7db044a6fa9d58bcde4f201a1" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="616" />
+                    <tagged-value id="tv3701d8686ba644e9868ec07ff73ca2a3" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="95" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.pocetKalorii = pocetKalorii;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o911a937228e345eebbc987ce796caf26894" cid="OP006" name="getMnozstvoTuku" creation-date="01/12/2024 08:20:59" type="double" type-id="Java.double" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tv35b6090154a341dcbf521d99594d2906" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getMnozstvoTuku" />
+                    <tagged-value id="tv673bc62254c9498cbea50f558e9b199e" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv2e507ba97fc047ebaa96eb626ca1ec2c" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv80dbcbfa6cb547d394e83ef254c0bfad" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="717" />
+                    <tagged-value id="tvaeaaf6d2246c484e8819520f0d998537" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="68" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return mnozstvoTuku;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="od50dbee533824e72a6002511bc599b71894" cid="OP007" name="setMnozstvoTuku" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p905d36d1e2614a54b85cdc3212fdce20" name="mnozstvoTuku" type="double" type-id="Java.double" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tvd4b9c20c846e4713bab17b1d99af5adb" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setMnozstvoTuku" />
+                    <tagged-value id="tv419d7598bc904f668d031e4cd573238b" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv227274eb318c464c803b418982bf9909" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv3339a25d9aba422ebfd8e8c791e3b6b8" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="791" />
+                    <tagged-value id="tvc4d352bca5944904b62f2763247536f8" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="98" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.mnozstvoTuku = mnozstvoTuku;
+    </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="0d5b24ed2dac4e6b8707c496f2cc3c8f" cid="GNR005" type="generalization" creation-date="01/12/2024 08:20:59" from="8f91bd2c2c9244399656f237c3db56e0" to="9e3f4de2a84d416b9b9672b0d49a8021">
+              <tagged-values>
+                <tagged-value id="tva1f5c1efd86041c5b74aaa5d2c69ecf6" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="" />
+              </tagged-values>
+            </item>
+            <item id="67b44a3e615c40f8905687f3077118b1" cid="GNR004" type="generalization" creation-date="01/12/2024 08:20:59" from="dfeba8264cee4c588ceb302ab4e784b1" to="9e3f4de2a84d416b9b9672b0d49a8021">
+              <tagged-values>
+                <tagged-value id="tv7bbc4387153f4ee694f69956825e498f" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="" />
+              </tagged-values>
+            </item>
+            <item id="5f2e894233b946a2af556a952ab26b21" cid="C005" type="class" name="Test" creation-date="01/12/2024 08:20:59" visibility="public">
+              <tagged-values>
+                <tagged-value id="tv5d7c526e356e40a281ad1e35d21f8c81" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tvb79ebeffb17d42988cf147d2cadfeb1b" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Test" />
+                <tagged-value id="tva9743a8046484bf7a8333b86645e1a83" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv151eef3e96f5497ea5e99f1cd3fcf38e" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tv939c00d3916d4c358259c9c2b609a518" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tvbf9e1051a6ce411480498e1830f8a50e" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="14" />
+                <tagged-value id="tv86b9de53bb1a49a38684930f3595269d" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="1108" />
+                <tagged-value id="tv789ec10a1ff2485bb0045d8fe218b31d" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tvcde217433d404a919a9751b8c189551d" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <operations>
+                <operation id="o3ba84cf42b81468da8cddd27e885f575896" cid="OP019" name="main" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public" static="true">
+                  <parameters>
+                    <parameter id="p95b110986f0043a6b55dc1ace805e85c" name="args" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tvd578dd4fbbd14f228477de600dcb1acc" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="main" />
+                    <tagged-value id="tv2e169341c4674c548482f765200d2fc0" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv75dd9095b1664525972314cda4b15dfe" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv6c1b8e01849e4853b2231a9d5e26217a" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="39" />
+                    <tagged-value id="tve1b4bcdb66fa4ef9b21de232249354c5" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="1078" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        Pomaranc p = new Pomaranc("Spanielsko");
+        Jablko j = new Jablko("Citronka");
+        Banan b = new Banan("zrely");
+        Ovocie2 ovocie = new Ovocie2("Jablko", 300, 10.3,"ovocie","jablko","citronka");
+        Zivocisna ziv = new Zivocisna("Maso", 1200, 30, "zajac");
+        System.out.println("----------------------------------------------------------------");
+        System.out.println(p.nazov + " | " + p.farba + " | "  + p.povod + " | " + p.vaha + "g");
+        System.out.println("----------------------------------------------------------------");
+        System.out.println(j.nazov + " | " + j.farba + " | "  + j.odroda + " | " + j.vaha + "g");
+        System.out.println("----------------------------------------------------------------");
+        System.out.println(b.nazov + " | " + b.farba + " | "  + b.zrelost + " | " + b.vaha + "g");
+        System.out.println("----------------------------------------------------------------");
+        System.out.println(ovocie.getNazovPotraviny());
+    </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="9e3f4de2a84d416b9b9672b0d49a8021" cid="C006" type="class" name="Ovocie" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv57b3c94c9dcd4ef093233181bb388ac6" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tv6d0bcc111f9448ed8f12f658068634af" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Ovocie" />
+                <tagged-value id="tv5ce6dff061ce47ed9e1609d565009019" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv539fb50e30c64b179110c2f73892ee82" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tvd91550f1428c44eb9875e654e8a118a0" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tvc2323a31954342218207f9af6dcb5dda" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1124" />
+                <tagged-value id="tved98f6e925284a69a59a2d466a8ffea2" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="566" />
+                <tagged-value id="tvff4bb49e143541ae8d3976e66b04e1b5" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tvfd2c99a4e6164f13bc0e2d864b73cbff" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <owned-items />
+              <attributes>
+                <attribute id="ab818bfc17010492da984f2124a958f6f896" cid="PROP008" name="nazov" creation-date="01/12/2024 08:20:59" property-ref="635dfd92c69a48cbb054d549f979fae5" />
+                <attribute id="ad39fb4b65d154cc489a5a74d87db3e04896" cid="PROP009" name="farba" creation-date="01/12/2024 08:20:59" property-ref="9db45017df6c46368c757d3a79a30186" />
+                <attribute id="a1c195c240802499a9caa7ff397b442b7896" cid="PROP010" name="vaha" creation-date="01/12/2024 08:20:59" property-ref="7d050f280d1d49db971242fa84c57ba4" />
+              </attributes>
+              <operations>
+                <operation id="o17cdffbcbb3f41fcb6e78a8979f821f6896" cid="OP020" name="Ovocie" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="undefined">
+                  <parameters>
+                    <parameter id="p29c0cda1db4d4ee28b8b5d3d1c4b0f3a" name="nazov" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="pd715f020352c44bba7a39a47e2bfe4b4" name="farba" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="pceff9d7a156e43a188ae352ac46f09e9" name="vaha" type="int" type-id="Java.int" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <tagged-values>
+                    <tagged-value id="tv13d2deee6a0847a6ba718e5058cb73e9" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Ovocie" />
+                    <tagged-value id="tv5b0502df0b4c4b07b61edd43247696e3" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tvaefc72c3294a41299c9402fafd77ad2a" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvc8163ebc6d04401e9b3eb9638887930e" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1199" />
+                    <tagged-value id="tv3d380229ed7d431eae9116d8f07ba5fc" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="138" />
+                  </tagged-values>
+                </operation>
+                <operation id="o19a712823dee4f829ad23a3f29e5ed4b897" cid="OP021" name="getNazov" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tvebaf26087c0d48ec83a73353f31a2430" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getNazov" />
+                    <tagged-value id="tv36e0e812ffc846f1bd9c0b4ce609e9ba" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv83eb7db56bb5406db3e18bb9eb9bd267" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvc11cace091444404a8b0d3403b814da2" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1345" />
+                    <tagged-value id="tvadc42f4b9c85481fa10510bd2e76d2ef" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="56" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return nazov;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o749a1c53394443d6a4c8c4f59f33d171897" cid="OP022" name="getFarba" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tv4aee26ec7a5f44ef9050704392b7847b" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getFarba" />
+                    <tagged-value id="tv9484cb0dc5f044f7990ddcd2dbf3137c" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv3825cbb093a2429d9ee1b13d51450c7f" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv6cb811e517c84b69af88b2332a67c18e" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1409" />
+                    <tagged-value id="tvf31a8c16c6754c2cbcfe0d42a056ea93" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="58" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+
+        return farba;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o199d614b6309457eb89ec5fe0991fff4897" cid="OP023" name="getVaha" creation-date="01/12/2024 08:20:59" type="int" type-id="Java.int" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tvef1978cb7a0d41df9b26d5759222e34f" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getVaha" />
+                    <tagged-value id="tv0db66a64950a4925adb23d2a6b4e7e61" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv6ff4bec489f749d1b5a3031ade8b7040" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv13fd2a902ebb40ff95efbb6d49aece86" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1475" />
+                    <tagged-value id="tvd61ef255442d4f958f48b6d01b18416c" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="51" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return vaha;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="oda5aacf9a4c04b6b8aab80b661d0a290897" cid="OP024" name="setValues" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p02181c5540174793a1994234b83e0278" name="nazov" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="pf9c1cc8e9de94b0997eba7a22cebb474" name="farba" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="p4c7d743a203144c5bccb3ab766b9b426" name="vaha" type="int" type-id="Java.int" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tv8b8b7f1eb5254f92b0be7782492ddb54" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setValues" />
+                    <tagged-value id="tv7aad40f816b345beb0ff7ded1a21ed03" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv9b27d594b4174a3091b8220ebd2f3c31" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tve42dca35bd9b431fa509d9cb86390981" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1534" />
+                    <tagged-value id="tv6c2635417e5c42d7ad72627346d308dc" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="153" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.nazov = nazov;
+        this.farba = farba;
+        this.vaha = vaha;
+    </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="5da4580267864293b642560708de5d75" cid="PROP002" type="property" name="pocetKalorii" owner="033e46e3397348d99e088ca1f3f2904d" creation-date="01/12/2024 08:20:59" visibility="private">
+              <tagged-values>
+                <tagged-value id="tv0fc60464585146ffaaf614415419b74e" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="pocetKalorii" />
+                <tagged-value id="tvacc6fbe09db743ed95f778f825fba705" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tvb2c6029e31db49578fa9ea07a8ae5999" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tvda11a06857824002947f02755f3d6cd6" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv478a063001ab43639287b97122788d70" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="73" />
+                <tagged-value id="tveed4432e2cac42b7aee197a156d51df8" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="25" />
+                <tagged-value id="tvd3679ccb76934fa0acf629597a7974f4" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tvf23dcddb1935493c82d8e5b7d5df1707" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <structural-feature type="int" type-id="Java.int" />
+            </item>
+            <item id="32f3c7434d5d42f582da10e0656a7628" cid="GNR002" type="generalization" creation-date="01/12/2024 08:20:59" from="c019aed4b5594f11a6eefd9f1104e45e" to="9749a0babdca4b2da085e81b73f466a7">
+              <tagged-values>
+                <tagged-value id="tv41d8a0a23f464805be2b397483281592" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="" />
+              </tagged-values>
+            </item>
+            <item id="d5c5d38feca64b61915853d8ae8ec2af" cid="GNR003" type="generalization" creation-date="01/12/2024 08:20:59" from="77ef82e325c149988e7ac6ec92f5f05c" to="033e46e3397348d99e088ca1f3f2904d">
+              <tagged-values>
+                <tagged-value id="tv6458f1725b0c4de599cd4c60d58d600f" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="" />
+              </tagged-values>
+            </item>
+            <item id="9db45017df6c46368c757d3a79a30186" cid="PROP009" type="property" name="farba" owner="9e3f4de2a84d416b9b9672b0d49a8021" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv7ee0b997b0784681a7a57554d213b30d" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="farba" />
+                <tagged-value id="tv6b4eee8d279a4b1b82399beab5c90825" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tvff6523cdb0e44b608268fc7df1245a7d" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tv3f44f5efebc94e9a88f092b85fe46eb4" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tva99772b107f748cbb413fd6b0dd87f9c" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1163" />
+                <tagged-value id="tva15fdb2849ff4eb2b6b74721cbdde627" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="13" />
+                <tagged-value id="tvb182e24b708949ecacdd2e85ef4e3f7b" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tv7030c7eb77e3419cba6745dcd4c4d7d1" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="8ff11fbf37e0413d855f82d979ab615f" cid="GNR001" type="generalization" creation-date="01/12/2024 08:20:59" from="9749a0babdca4b2da085e81b73f466a7" to="033e46e3397348d99e088ca1f3f2904d">
+              <tagged-values>
+                <tagged-value id="tvb7441bc9c35345338b0ed8be2d082661" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="" />
+              </tagged-values>
+            </item>
+            <item id="dfeba8264cee4c588ceb302ab4e784b1" cid="C007" type="class" name="Banan" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv2fa731cd36034f609dde713fc99b4328" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tv78d5b169d987406e8e6ffe5bc49600d0" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Banan" />
+                <tagged-value id="tv61ed282ab4214d80b763dd26a1020a94" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv270a8f9cb8704063a45764e40aa17698" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tv38e96c48caca4b5aba9aa4ab19d3b938" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv3c45092d11704b16ac406d0d360d47cf" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1694" />
+                <tagged-value id="tv08f7e3c428d2446b9f05098418b9e02a" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="317" />
+                <tagged-value id="tvf8e63a94a26545209e981fce34c95863" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tv96af29d30d554c74a6e610ec998d85ac" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <owned-items />
+              <attributes>
+                <attribute id="aa589748296364ea4aecdf68e7a0410ed897" cid="PROP011" name="zrelost" creation-date="01/12/2024 08:20:59" property-ref="d683d18576b04c3494eef49ac4214ea4" />
+              </attributes>
+              <operations>
+                <operation id="od6effc8030704d7081bb4876196e69cd897" cid="OP025" name="getZrelost" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tvba6fa07cbded43b48b72e320c9848e6d" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getZrelost" />
+                    <tagged-value id="tve9cae5f824bc4dbf97b1bd34fd8e3e3c" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv01979442c1554741a5ecdab5cff79976" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv3149648845544715ac808f2b829fe0ba" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1751" />
+                    <tagged-value id="tv9c68e0bb14044d919a5fbac9e56c0680" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="60" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return zrelost;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="od1ed3323751b4aae933abcf1563ba347897" cid="OP026" name="setZrelost" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="pf77596fa58e94ae29c5aeaae1e8ad995" name="zrelost" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tv00d3e7cb63ef4bfc96a91744d704bffd" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setZrelost" />
+                    <tagged-value id="tv553e0b619de944f19a6d11b0b5927000" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv67d0ea85cae940a3b537e334e1d3f859" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv5d14faa06d8247d09fbf5ab63fa06acb" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1819" />
+                    <tagged-value id="tvafacb173bbf041fdad7439e4efae82de" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="80" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.zrelost = zrelost;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o96ed14ce314d495fbbc412fe88f4d2fa897" cid="OP027" name="Banan" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="undefined">
+                  <parameters>
+                    <parameter id="p13a724ee512f4b25a5d0a045ba420377" name="zrelost" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <tagged-values>
+                    <tagged-value id="tva9088ba2f1f34898a21941026f393b65" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Banan" />
+                    <tagged-value id="tvd844c0755172480fa58043b9bf7a4c81" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tvcf48515d51f14aac84fc00eddb77dc18" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvb4001c9232274471b4ef62b0e85ce06c" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1907" />
+                    <tagged-value id="tv09b0329a4c66446490b0541d8ca28d10" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="101" />
+                  </tagged-values>
+                </operation>
+              </operations>
+            </item>
+            <item id="fe75b010eb284f6ab26fd3dd307e38f5" cid="PROP001" type="property" name="nazovPotraviny" owner="033e46e3397348d99e088ca1f3f2904d" creation-date="01/12/2024 08:20:59" visibility="private">
+              <tagged-values>
+                <tagged-value id="tv31c5bc5c2ec548d8a2fe95aa175d0415" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="nazovPotraviny" />
+                <tagged-value id="tvd626117452ac4f459e4a411dc0953d7b" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tvce9723a35f274c0a8ebd154966a1569f" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tvd5fd76d669ab498e953813896970d7f3" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tvfddfe5aa2b5f40918fcec8830a5a9836" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="38" />
+                <tagged-value id="tvf62d49f83a2c4ec3be6ae6cba897e4ef" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="30" />
+                <tagged-value id="tve65bb8124824444194dca64c13798f47" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tvbda97b2f4b4c4786a09284fbe9e8c646" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="d7f0a776aa844f37983606722e25097e" cid="C009" type="class" name="Pomaranc" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv16bcd6a33e1a49b28be19b0a05e625fe" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tv39933b11031c443d8459e1b720b35a30" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Pomaranc" />
+                <tagged-value id="tvf3ef1b74da3746a7a750041c2598421b" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tvaa13820d82b6402da0a1cd629816d117" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tvd6fccac4c75e4e44b0e9724ad6a21874" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv89afb09b18224a859468da56b208a9c6" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2331" />
+                <tagged-value id="tv2b50c801a27541568834267e0eeaec28" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="310" />
+                <tagged-value id="tve87932056f644ce48d2e31b3b80c5939" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tv9a82aebd89d949ecb75c57b72a17410e" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <owned-items />
+              <attributes>
+                <attribute id="a4baee6906ee94a36adbef0676fe50fa8897" cid="PROP013" name="povod" creation-date="01/12/2024 08:20:59" property-ref="b2a4afd14d7d4135ac9b0ec12126171d" />
+              </attributes>
+              <operations>
+                <operation id="oe517482389834ac08fe6e3176d8cef56897" cid="OP031" name="getPovod" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tv7e37dfc040f646d18ecb3a3c412de246" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getPovod" />
+                    <tagged-value id="tv3bc8a98f431c49c1a08b89f94e56b0c8" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tvf9ca63f70f434e2fa36907c5d5272b79" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvb96f584da93949b4a5b3da244131cda6" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2389" />
+                    <tagged-value id="tvcd1e05ffacb04e78b5ce5600cd47f7ef" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="56" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return povod;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o8f56dbef1748447aa30955e9d7aab19f897" cid="OP032" name="setPovod" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p6d5f13186c8e4f9d93d01785798c29ee" name="povod" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tv0c6c1bc111574514880c9c507de91daa" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setPovod" />
+                    <tagged-value id="tvef833806e87649d0883de9608ca7df89" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv101bdc6862b14735a8b7be0ec11e6c73" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv8661d97f37f349bdb3fbc69d948938bc" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2453" />
+                    <tagged-value id="tv69b23e8fc4fa4f2c85c7b0034fafc877" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="72" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.povod = povod;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o0b582d723d5d403eaa71b021d1588e2a897" cid="OP033" name="Pomaranc" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="undefined">
+                  <parameters>
+                    <parameter id="p7dc8ac2117b44480a523d3bd676c6efe" name="povod" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <tagged-values>
+                    <tagged-value id="tv6ccd2a99910b433fa2b35be5d18b8dff" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Pomaranc" />
+                    <tagged-value id="tvdf0de158b1ab47908abda0a26cda70d9" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                    <tagged-value id="tv88711b33377b41348e0cf36755eed47c" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv859ebdf81ce14134951d3e706a2d9c13" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2533" />
+                    <tagged-value id="tv4bec88e1f71f48caba522d7d016684c9" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="105" />
+                  </tagged-values>
+                </operation>
+              </operations>
+            </item>
+            <item id="7d050f280d1d49db971242fa84c57ba4" cid="PROP010" type="property" name="vaha" owner="9e3f4de2a84d416b9b9672b0d49a8021" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv187702e7618b422382be3806d8825f80" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="vaha" />
+                <tagged-value id="tv929b1e4312d64ca4b443c047c5eba00a" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv218b6c2501a147d2a42b5fd87ebdd2e5" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tv0e3c9335c8cc49ccb32c1ba8b1a7e476" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tve82b06ff491e477a92cc6c27d07448eb" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1182" />
+                <tagged-value id="tv2d3f69381c904e1a9a06cb6d936da9e0" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="9" />
+                <tagged-value id="tv651fff6d2ca24527b2f89d5e3fa5a1f1" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tvdccdf87ef25343609ad33f6f979a863c" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <structural-feature type="int" type-id="Java.int" />
+            </item>
+            <item id="77ef82e325c149988e7ac6ec92f5f05c" cid="C004" type="class" name="Zivocisna" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv1ed86d214ae44fd88911ff25cb506437" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tv207faac5b8794298a58d17aa2267858e" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Zivocisna" />
+                <tagged-value id="tvbe9f0bfa835d4f859568f650b34b676a" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv24101ec13d064414bdd1e55a0de9b67d" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tvf26b5ff2c2644af7acfddae1431a7304" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tvb3799d9fd8064b89a25eb2fae9b4b33a" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1977" />
+                <tagged-value id="tv9b71d6bcb15a47aeb3d65a09076b5ba3" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="437" />
+                <tagged-value id="tva59777ccdf2d4fb78a9ac4ed66d59c36" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tv23ec6b2790134991b7a725affff407a2" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <owned-items />
+              <attributes>
+                <attribute id="a76fe255090624e5cb70a304e94e67275895" cid="PROP007" name="druhPovodu" creation-date="01/12/2024 08:20:59" property-ref="c4c286070c74462a819a126b30e2c160" />
+              </attributes>
+              <operations>
+                <operation id="oa693f99a25df49a7b7ccb6628082e797896" cid="OP016" name="Zivocisna" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p4bffb0bb8783447bbd642ff95454f608" name="nazovPotraviny" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="pb1bb927fbc874dcf94f68112c3be45c1" name="pocetKalorii" type="int" type-id="Java.int" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="pe952e2f3a26641d49c6669415eaa76c4" name="mnozstvoTuku" type="double" type-id="Java.double" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="p3f69b25813584a8cb87777945a8fb51c" name="druhPodvodu" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <tagged-values>
+                    <tagged-value id="tv0fb702241d504184a4e3670e94e8e712" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Zivocisna" />
+                    <tagged-value id="tv7d0d9f39c02842adb0015e48d7016979" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv94c97a1e7af24b87b87e24186ecc2308" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvfb9c5bfd23844e01a0b03f933627eaeb" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2043" />
+                    <tagged-value id="tv3eda246216024d758820e8b0e5d56204" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="204" />
+                  </tagged-values>
+                </operation>
+                <operation id="ob2205e4c7ac844708e69081bf41c83e7896" cid="OP017" name="getDruhPovodu" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tv76f622f99b1d410c9293c5adeaa8ef76" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getDruhPovodu" />
+                    <tagged-value id="tvfce8c0054092444bb6e2ba0d2f765822" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tvc46a837a2c734076803f5adfb864d29c" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvb454414bca5f4f67b6fa52315cdcd985" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2252" />
+                    <tagged-value id="tvf7f79f73205d43439b8ddadf0bbc0a6a" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="64" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return druhPovodu;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o4cd7e776512d44d384f4ecd88820182f896" cid="OP018" name="setDruhPovodu" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="pe73a3b88a78143638fb3b0aeb3de4ead" name="druhPovodu" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tv37a6adf1a35a4b17b9eb8d2f97280abd" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setDruhPovodu" />
+                    <tagged-value id="tvab242e8262a44fd9b2aaccc62d8d5c3b" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv028d04a0a0584b03bc577af39faf4199" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvc35bcfd08d3f4901b4f4b903eca25e73" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2321" />
+                    <tagged-value id="tveed38eb881a640aaa7192a1e282b40e8" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="90" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.druhPovodu = druhPovodu;
+    </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="bd15d30ecf1e4d0081a9f40f2c4762e5" cid="PROP003" type="property" name="mnozstvoTuku" owner="033e46e3397348d99e088ca1f3f2904d" creation-date="01/12/2024 08:20:59" visibility="private">
+              <tagged-values>
+                <tagged-value id="tvad1dae84247e454380d70550deab6123" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="mnozstvoTuku" />
+                <tagged-value id="tvc29d22bdfa744ef89fa341fa0b8d4122" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv4c858138ec28406f99ecf1fbd8edce1f" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tv116a2aedb46b464da6c27f986df8b0b7" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tve8dd79c475034180a565e0e8634d678c" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="103" />
+                <tagged-value id="tv9b3ab065057643c89d381a7971295f1d" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="28" />
+                <tagged-value id="tv2aad44917b884b3cac1b07f13f82e9c9" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tv79f7bef836624262908794519f157ad7" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <structural-feature type="double" type-id="Java.double" />
+            </item>
+            <item id="b2a4afd14d7d4135ac9b0ec12126171d" cid="PROP013" type="property" name="povod" owner="d7f0a776aa844f37983606722e25097e" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv93883dce0cd348dbb6622836d9a44f6f" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="povod" />
+                <tagged-value id="tv75ec4b94e5804e3092f5373abd3feb8b" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv056817836bc644b3af95353ea48b049e" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tv01dadd72cb7c4915924177dcb781c50f" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tvd2ae530519294c379d1f52549f63a152" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="2368" />
+                <tagged-value id="tv3010e508d76041968f0ece9b32360f60" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="13" />
+                <tagged-value id="tvf4132043132c4d689589966a603559dc" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tvdb3c684e49404287a51137026117b84f" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="7c388fca73a5445fabb71883912e3f76" cid="PROP004" type="property" name="typRastliny" owner="9749a0babdca4b2da085e81b73f466a7" creation-date="01/12/2024 08:20:59" visibility="private">
+              <tagged-values>
+                <tagged-value id="tvcdc2791b1f1b410eba2d2130cbb85dd6" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="typRastliny" />
+                <tagged-value id="tvce027e0565364dcb9fa471ac49a303a9" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv3960812b1d304ded9fb23e501e47731d" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tv177d67a6fb134c0e9a22302e9b730dbd" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv7eb895e72b3b42feb632a3f540312622" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="929" />
+                <tagged-value id="tvf80867ce62184128aaa18b0b3dc0e58d" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="27" />
+                <tagged-value id="tvcbac740acc3f4f008afce226cecf1a65" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tvf0bf837c690e49aa931631b8f13b0f23" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="c019aed4b5594f11a6eefd9f1104e45e" cid="C003" type="class" name="Ovocie2" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tvc93ba933e36e4fec9a62e874b52e21a1" name="namespace" type="text" multiple="false" hidden="false" value="src" />
+                <tagged-value id="tv732e1d9a87eb471b8c20d603f54184e7" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Ovocie2" />
+                <tagged-value id="tv88f050e412c54bd3bc33630c7fdac669" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv7061b79dc7c2411abcec63a38b1a8253" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                <tagged-value id="tv6aa7da861d754f2db6e6877dc6862c04" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv478e102eea20450a906b0f6389ab2b3c" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1346" />
+                <tagged-value id="tvfa591b7ba98742dc9c9f1757c2ddcb62" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="629" />
+                <tagged-value id="tv173120a1ef4041c49fb9948dd9f89823" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2414" />
+                <tagged-value id="tv1f77c78f47414194917da945ceaf90af" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:52:41" />
+              </tagged-values>
+              <owned-items />
+              <attributes>
+                <attribute id="aae8490db15244efc99927c11c25f5fa1895" cid="PROP005" name="nazov" creation-date="01/12/2024 08:20:59" property-ref="3c353280d76d44ed8fd17a9bb8fcc655" />
+                <attribute id="add1bf9851ee84143acb6a9cc19c294c9895" cid="PROP006" name="odroda" creation-date="01/12/2024 08:20:59" property-ref="273515141f9b416996064090ea7a7345" />
+              </attributes>
+              <operations>
+                <operation id="o57bf0e3137394d8da296ad1c54771142895" cid="OP011" name="Ovocie2" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p8ca2cf8181b34f0ab51c03ce3dbe56bf" name="nazovPotraviny" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="peb0a767177d04a65b38fe8ecbb05c922" name="pocetKalorii" type="int" type-id="Java.int" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="p0fd5307a17154697864999dd092c2c91" name="mnozstvoTuku" type="double" type-id="Java.double" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="pa04488b706914c31a5c2a72c9b02136a" name="typRastliny" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="pb84c1be7e71d4198b89a0ba91177f502" name="nazov" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                    <parameter id="p26fdd5f8651941e485eee469a016cbfd" name="odroda" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <tagged-values>
+                    <tagged-value id="tv1f82411da04e4361b8a0cb06706f1d47" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="Ovocie2" />
+                    <tagged-value id="tvc272506726594286b709cdf5311a9f73" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv739a8addffbe4dea88c90d6f406aeb27" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv840a41cd8b474eaaaa0c833afa0bd09d" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1436" />
+                    <tagged-value id="tve89ad604b7ca46a094f8f2853659d539" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="262" />
+                  </tagged-values>
+                </operation>
+                <operation id="o3f880cdae7f84b60a9e6e91796ad148b895" cid="OP012" name="getNazov" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tv66fb98e48473476daaa7ae2f38467b90" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getNazov" />
+                    <tagged-value id="tv4059c5dfa1d043a8ba25aac4c6e969c6" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv401b9692e91245e89ced9065104833ab" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tvc251fe0798204276a1da8c834981db04" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1703" />
+                    <tagged-value id="tv1a4c91f18c654eab88686c41eb68e558" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="54" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return nazov;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o1348a1ab3b174826b2509eb875cb7634895" cid="OP013" name="setNazov" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p66d41fa7853b4d10b32e7dd3708a29b8" name="nazov" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tv7510682f84774e46a4bf0b10e05166f7" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setNazov" />
+                    <tagged-value id="tv7dffd34e381e4e51b451d8728c4b1fe4" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tv076994614b7e4f5e82e098636215b341" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv915544ef24804dc3af01b5ac2f6cbfc9" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1762" />
+                    <tagged-value id="tv6ab11aec48ff4245b3e7191ba9275c44" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="70" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.nazov = nazov;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o9d1a3978756d457dbb8d73d05eb2982e895" cid="OP014" name="getOdroda" creation-date="01/12/2024 08:20:59" type="String" type-id="Java.String" visibility="public">
+                  <tagged-values>
+                    <tagged-value id="tv38356e9259ae48a5b9329e9886b9ec7c" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="getOdroda" />
+                    <tagged-value id="tvbee590e20ab648a3a0fe69e57da1b810" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tvd86df917a4624ec7848d6743106b2611" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv3a9a7ede63bb4b838565e98bb20cb142" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1837" />
+                    <tagged-value id="tv7d50f8afe65c4244bbcc03d4c942825c" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="56" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        return odroda;
+    </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o89d8e7a5bc1748eb97793074fb46cad2895" cid="OP015" name="setOdroda" creation-date="01/12/2024 08:20:59" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p62cf73d59a2d4d4180212d4c48dabf8a" name="odroda" type="String" type-id="Java.String" creation-date="01/12/2024 08:20:59" />
+                  </parameters>
+                  <tagged-values>
+                    <tagged-value id="tv6da8b05aa9384f27b610e9747e19db5a" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="setOdroda" />
+                    <tagged-value id="tvcc9d45b13acc450392c7fab50ae57dde" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Jedlo.java" />
+                    <tagged-value id="tvb3d72a6bfc3e42adad6164c4da2d0903" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                    <tagged-value id="tv0f3983d5196e4c328a24cdc44c160be8" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1898" />
+                    <tagged-value id="tv3382d49a5cc64c72a6df642440aaa4bc" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="74" />
+                  </tagged-values>
+                  <source-codes>
+                    <source-code language="Java">
+        this.odroda = odroda;
+    </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="408730c4a4384a9b99fecfaeca742d04" cid="GNR006" type="generalization" creation-date="01/12/2024 08:20:59" from="d7f0a776aa844f37983606722e25097e" to="9e3f4de2a84d416b9b9672b0d49a8021">
+              <tagged-values>
+                <tagged-value id="tv28b7f33c4ffa4e7c9979cc4c86bb9d91" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="" />
+              </tagged-values>
+            </item>
+            <item id="d683d18576b04c3494eef49ac4214ea4" cid="PROP011" type="property" name="zrelost" owner="dfeba8264cee4c588ceb302ab4e784b1" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv959d88de2e2042fb9b4639fa89512083" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="zrelost" />
+                <tagged-value id="tv2e2f914c75684ec994b1a3e273279e2e" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tv61c91507e7df4d38ac11640ae7e0d0ef" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tvc0b72ffef45d4edf9943a7e969c67425" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tv9bbc757c5cf847a19a795271702203e5" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1728" />
+                <tagged-value id="tv6c8f54d0d1a84d0aa60970d436840ae0" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="15" />
+                <tagged-value id="tv13ea965b3dbf434799680066621ddde1" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tv127f9932569a4e3583e22c6b0798af97" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+            <item id="635dfd92c69a48cbb054d549f979fae5" cid="PROP008" type="property" name="nazov" owner="9e3f4de2a84d416b9b9672b0d49a8021" creation-date="01/12/2024 08:20:59" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv3128ec8cf3d24676a22f1c347a6eae18" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="nazov" />
+                <tagged-value id="tv40d8bc8517074233af510772127755af" name="SourceCodeGroup" type="reference" multiple="false" hidden="true" ref="p58d8a6ba70b740b4aed99a11444ed924_247936548" />
+                <tagged-value id="tvfe9bbff5a00d4ed6933627268573e1a7" name="SourceCodePath" type="text" multiple="false" hidden="true" value="C:\SPSE\OPG\2023-12-14\src\Test.java" />
+                <tagged-value id="tve13bd18ba97948cc80b7a6cdbd520de7" name="SourceCodeLanguage" type="text" multiple="false" hidden="true" value="Java" />
+                <tagged-value id="tvd48193a5c9e44b68a114ca4ee0d9a99c" name="SourceCodePosition" type="text" multiple="false" hidden="true" value="1144" />
+                <tagged-value id="tv713a03d049a842e4a1d9a6d119a83513" name="SourceCodeLength" type="text" multiple="false" hidden="true" value="13" />
+                <tagged-value id="tv9819d08d4cc340c19e20fb1660710a2b" name="SourceCodeFileSize" type="text" multiple="false" hidden="true" value="2641" />
+                <tagged-value id="tv3f39e064d32849cfa0bcc0020b59d9f0" name="SourceCodeFileChangeDate" type="text" multiple="false" hidden="true" value="01/11/2024 13:55:46" />
+              </tagged-values>
+              <structural-feature type="String" type-id="Java.String" />
+            </item>
+          </abstract-items>
+          <sub-models />
+          <diagram type="uml-class" id="pbe097fb27e8c4510afe98632f0ea70c1_449831284" name="src" order-index="1" uid="" auto-routed-paths="false" default-line-style="default" namespace="src" view-location="-317,28">
+            <style>
+              <background-color index="1" color="#FFFFFFFF" />
+              <background-color index="2" color="#FFFFFFFF" />
+              <background-type type="vertical-linear" />
+            </style>
+            <meta>
+              <authors>
+                <author> </author>
+              </authors>
+              <description />
+              <creation-date>01/12/2024 08:20:59</creation-date>
+              <change-date>01/12/2024 08:20:59</change-date>
+              <revision-count>0</revision-count>
+              <version />
+            </meta>
+            <tagged-values>
+              <tagged-value id="tv494ecd43f3964ba7af2f55473dd4ae97" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="src" />
+            </tagged-values>
+            <abstract-items />
+            <layer id="45e3e38d76394d5780c1d6306caab5d5" name="Default" visible="true" enabled="true" locked="false">
+              <item id="67b44a3e615c40f8905687f3077118b1" iid="965e91616b534a7fa61dd235619f05e1" creation-date="01/12/2024 08:20:59" order-index="0" type="relation">
+                <layout line-style="perpendicular" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="361" y1="302" x2="326" y2="193" start-border-pos="0.125" end-border-pos="0.625" start-local-pos="98" end-local-pos="169" name-position="0,20">
+                  <points>
+                    <point x="361" y="302" />
+                    <point x="332" y="292" />
+                    <point x="326" y="193" />
+                  </points>
+                </layout>
+                <relation from="dfeba8264cee4c588ceb302ab4e784b1" from-iid="55ed055d6651473db175a7abe5b0a568" to="9e3f4de2a84d416b9b9672b0d49a8021" to-iid="529e37a4cd4b469d9b89f75f90822aaf" />
+              </item>
+              <item id="8ff11fbf37e0413d855f82d979ab615f" iid="de3989ca3736450cb5febfc1de4e5cf2" creation-date="01/12/2024 08:20:59" order-index="1" type="relation">
+                <layout line-style="perpendicular" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="936" y1="358" x2="1114" y2="249" start-border-pos="0.12534818941504178" end-border-pos="0.6246518105849582" start-local-pos="180" end-local-pos="180" name-position="0,20">
+                  <points>
+                    <point x="936" y="358" />
+                    <point x="932" y="272" />
+                    <point x="1112" y="272" />
+                    <point x="1114" y="249" />
+                  </points>
+                </layout>
+                <relation from="9749a0babdca4b2da085e81b73f466a7" from-iid="bdac30e3746f475da5fbe7d3e8e37a8b" to="033e46e3397348d99e088ca1f3f2904d" to-iid="91372c4355ca4ba9b9447c523355a498" />
+              </item>
+              <item id="d5c5d38feca64b61915853d8ae8ec2af" iid="d53025c385474958bfaa25b89ed5343a" creation-date="01/12/2024 08:20:59" order-index="2" type="relation">
+                <layout line-style="perpendicular" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1330" y1="358" x2="1114" y2="249" start-border-pos="0.125" end-border-pos="0.6246518105849582" start-local-pos="177" end-local-pos="180" name-position="0,20">
+                  <points>
+                    <point x="1330" y="358" />
+                    <point x="1332" y="332" />
+                    <point x="1112" y="332" />
+                    <point x="1114" y="249" />
+                  </points>
+                </layout>
+                <relation from="77ef82e325c149988e7ac6ec92f5f05c" from-iid="e100314d85dc4248adfdcd856af1e6a7" to="033e46e3397348d99e088ca1f3f2904d" to-iid="91372c4355ca4ba9b9447c523355a498" />
+              </item>
+              <item id="408730c4a4384a9b99fecfaeca742d04" iid="75ca9e7a581b4e7c80f17eaf22e62e3f" creation-date="01/12/2024 08:20:59" order-index="3" type="relation">
+                <layout line-style="perpendicular" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="116" y1="302" x2="326" y2="193" start-border-pos="0.12442396581172943" end-border-pos="0.625" start-local-pos="108" end-local-pos="169" name-position="0,20">
+                  <points>
+                    <point x="116" y="302" />
+                    <point x="332" y="212" />
+                    <point x="326" y="193" />
+                  </points>
+                </layout>
+                <relation from="d7f0a776aa844f37983606722e25097e" from-iid="94d93e65675648b6aacc77c047808213" to="9e3f4de2a84d416b9b9672b0d49a8021" to-iid="529e37a4cd4b469d9b89f75f90822aaf" />
+              </item>
+              <item id="8f91bd2c2c9244399656f237c3db56e0" iid="a5aa0c2b9e954b67a20ccdf60a0562af" creation-date="01/12/2024 08:20:59" order-index="4" type="entity">
+                <layout ax="497" ay="302" awidth="201" aheight="117" x="497" y="302" width="201" height="117" />
+                <classifier />
+                <class />
+              </item>
+              <item id="32f3c7434d5d42f582da10e0656a7628" iid="331d071091034c2a98c6fcfe512b1235" creation-date="01/12/2024 08:20:59" order-index="5" type="relation">
+                <layout line-style="perpendicular" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="945" y1="602" x2="936" y2="493" start-border-pos="0.125" end-border-pos="0.6246518105849582" start-local-pos="177" end-local-pos="180" name-position="0,20">
+                  <points>
+                    <point x="945" y="602" />
+                    <point x="932" y="592" />
+                    <point x="936" y="493" />
+                  </points>
+                </layout>
+                <relation from="c019aed4b5594f11a6eefd9f1104e45e" from-iid="bfd2d631c0994b13b7ddea505ff0134b" to="9749a0babdca4b2da085e81b73f466a7" to-iid="bdac30e3746f475da5fbe7d3e8e37a8b" />
+              </item>
+              <item id="dfeba8264cee4c588ceb302ab4e784b1" iid="55ed055d6651473db175a7abe5b0a568" creation-date="01/12/2024 08:20:59" order-index="6" type="entity">
+                <layout ax="263" ay="302" awidth="196" aheight="117" x="263" y="302" width="196" height="117" />
+                <classifier />
+                <class />
+              </item>
+              <item id="d7f0a776aa844f37983606722e25097e" iid="94d93e65675648b6aacc77c047808213" creation-date="01/12/2024 08:20:59" order-index="7" type="entity">
+                <layout ax="8" ay="302" awidth="217" aheight="117" x="8" y="302" width="217" height="117" />
+                <classifier />
+                <class />
+              </item>
+              <item id="033e46e3397348d99e088ca1f3f2904d" iid="91372c4355ca4ba9b9447c523355a498" creation-date="01/12/2024 08:20:59" order-index="8" type="entity">
+                <layout ax="934" ay="0" awidth="359" aheight="249" x="934" y="0" width="359" height="249" />
+                <classifier />
+                <class />
+              </item>
+              <item id="9749a0babdca4b2da085e81b73f466a7" iid="bdac30e3746f475da5fbe7d3e8e37a8b" creation-date="01/12/2024 08:20:59" order-index="9" type="entity">
+                <layout ax="756" ay="358" awidth="359" aheight="135" x="756" y="358" width="359" height="135" />
+                <classifier />
+                <class />
+              </item>
+              <item id="c019aed4b5594f11a6eefd9f1104e45e" iid="bfd2d631c0994b13b7ddea505ff0134b" creation-date="01/12/2024 08:20:59" order-index="10" type="entity">
+                <layout ax="768" ay="602" awidth="354" aheight="209" x="768" y="602" width="354" height="209" />
+                <classifier />
+                <class />
+              </item>
+              <item id="5f2e894233b946a2af556a952ab26b21" iid="4c23dbcc5ad74d8a967f58ed4663e7fd" creation-date="01/12/2024 08:20:59" order-index="11" type="entity">
+                <layout ax="0" ay="449" awidth="134" aheight="60" x="0" y="449" width="134" height="60" />
+                <classifier />
+                <class />
+              </item>
+              <item id="9e3f4de2a84d416b9b9672b0d49a8021" iid="529e37a4cd4b469d9b89f75f90822aaf" creation-date="01/12/2024 08:20:59" order-index="12" type="entity">
+                <layout ax="157" ay="0" awidth="338" aheight="193" x="157" y="0" width="338" height="193" />
+                <classifier />
+                <class />
+              </item>
+              <item id="0d5b24ed2dac4e6b8707c496f2cc3c8f" iid="e179e02199c24b0090d1cabde6de5a2f" creation-date="01/12/2024 08:20:59" order-index="13" type="relation">
+                <layout line-style="perpendicular" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="598" y1="302" x2="326" y2="193" start-border-pos="0.1256218905472637" end-border-pos="0.625" start-local-pos="101" end-local-pos="169" name-position="0,20">
+                  <points>
+                    <point x="598" y="302" />
+                    <point x="332" y="292" />
+                    <point x="326" y="193" />
+                  </points>
+                </layout>
+                <relation from="8f91bd2c2c9244399656f237c3db56e0" from-iid="a5aa0c2b9e954b67a20ccdf60a0562af" to="9e3f4de2a84d416b9b9672b0d49a8021" to-iid="529e37a4cd4b469d9b89f75f90822aaf" />
+              </item>
+              <item id="77ef82e325c149988e7ac6ec92f5f05c" iid="e100314d85dc4248adfdcd856af1e6a7" creation-date="01/12/2024 08:20:59" order-index="14" type="entity">
+                <layout ax="1153" ay="358" awidth="354" aheight="135" x="1153" y="358" width="354" height="135" />
+                <classifier />
+                <class />
+              </item>
+            </layer>
+          </diagram>
+        </model>
+      </sub-models>
+      <diagram type="uml-package" id="pec7fcdf88b9e456e8b2a9ffcaac5ede0_444342136" name="Packages" order-index="1" uid="" auto-routed-paths="false" default-line-style="default" namespace="">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="vertical-linear" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>01/12/2024 08:20:59</creation-date>
+          <change-date>01/12/2024 08:20:59</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <tagged-values>
+          <tagged-value id="tvfc371b46bb144862bea3a5df8e56a915" name="ReverseEngineered" type="text" multiple="false" hidden="true" value="" />
+        </tagged-values>
+        <abstract-items />
+        <layer id="7672cda4542d45999b6766272bfc5740" name="Default" visible="true" enabled="true" locked="false">
+          <item id="313b5955bc684f0d86481b0a72fc11f1" iid="19efc41a97574400988ad4ebe59fb4d4" creation-date="01/12/2024 08:20:59" order-index="0" type="entity">
+            <layout ax="0" ay="0" awidth="84" aheight="56" x="0" y="0" width="84" height="56" expanded="-20,0,84,56" collapsed="0,0,0,0" />
+            <package name-in-body="false" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
