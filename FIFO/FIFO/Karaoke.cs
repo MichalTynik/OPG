@@ -1,21 +1,32 @@
 namespace FIFO;
 
-public class Karaoke
+public class Music
 {
-               public void Subor()
+               int position;
+               public string Lyrics()
                {
-                              using (StreamWriter sw = new StreamWriter("KaraokeText.txt", true))
+                              
+                              string[] words = new string[]{};
+                              string line;
+                              using (StreamReader sr = new StreamReader(File.OpenRead("KaraokeText")))
                               {
-                                             sw.WriteLine("streamWriter");
-                              }
-
-                              using (StreamReader sr = new StreamReader("KaraokeText.txt"))
-                              {
-                                             string s;
-                                             while ((s = sr.ReadLine()) != null)
+                                             if (words.Length == 0)
                                              {
-                                                            Console.WriteLine(s);
+                                                        line =  sr.ReadToEnd();    
+                                                        words = line.Split(new char[]{' ', '\n'});
                                              }
+
+                                             if (position < words.Length)
+                                             {              
+                                                            string word = words[position];
+                                                            position++;
+                                                            Console.WriteLine(word
+                                                            );
+                                                            return word;
+                                             }
+
+                                             return "NO DATA";
                               }
                }
+
 }
