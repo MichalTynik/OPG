@@ -27,6 +27,9 @@ namespace LinkedList
             Console.WriteLine(mojlist);
             mojlist.InsertAfter(0, 444);
             Console.WriteLine(mojlist);
+            Console.WriteLine(mojlist.List);
+            Console.WriteLine(mojlist.GetIndex(555));
+            Console.WriteLine(mojlist.GetIndex(456));
         }
     }
 }

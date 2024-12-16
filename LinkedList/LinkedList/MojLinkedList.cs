@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
@@ -10,6 +11,25 @@ namespace LinkedList
     internal class MojLinkedList
     {
         private Node prvy;
+        private string _list;
+        private string _index;
+
+        public string List
+        {
+            get
+            {
+                Node link = prvy;
+                _list = "[ ";
+                for (int i = 0; i < Length(); i++)
+                {
+                    _list += link.Value.ToString() + ", ";
+                    link = link.Next;
+                }
+                _list = _list.Trim(',', ' ');
+                _list += "]";
+                return _list;
+            }
+        }
 
         public int GetValue(int index)
         {
@@ -75,6 +95,27 @@ namespace LinkedList
                 link = link.Next;
             }
             return counter;
+        }
+
+        public int GetIndex(int value)
+        {
+
+            Node link = prvy;
+            int counter = 0;
+            if (link == null)
+            {
+                Console.WriteLine("List je prazdny");
+                return -1;
+            }
+            while (link.Next != null)
+            {
+                if (link.Value == value)
+                    return counter;
+                counter++;
+                link = link.Next;
+            }
+            Console.WriteLine("Hodnota sa nenachadza v liste");
+            return -1;
         }
 
         public bool DeleteAt(int index)
