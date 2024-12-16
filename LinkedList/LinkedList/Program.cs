@@ -12,13 +12,21 @@ namespace LinkedList
         {
             MojLinkedList mojlist = new MojLinkedList();
             Console.WriteLine(mojlist);
-            mojlist.append(123);
+            mojlist.Append(123);
             Console.WriteLine(mojlist);
-            mojlist.append(456);
+            mojlist.Append(456);
             Console.WriteLine(mojlist);
-            mojlist.append(789);
+            mojlist.Append(789);
             Console.WriteLine(mojlist);
             Console.WriteLine(mojlist.Length());
+            Console.WriteLine(mojlist.GetValue(1));
+            Console.WriteLine(mojlist.GetValue(-2));
+            mojlist.SetValue(0, 555);
+            Console.WriteLine(mojlist);
+            mojlist.DeleteAt(0);
+            Console.WriteLine(mojlist);
+            mojlist.InsertAfter(0, 444);
+            Console.WriteLine(mojlist);
         }
     }
 }

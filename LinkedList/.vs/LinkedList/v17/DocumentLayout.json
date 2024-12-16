@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\SPSE\\OPG\\LinkedList\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|C:\\SPSE\\OPG\\LinkedList\\linkedlist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|solutionrelative:linkedlist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|c:\\spse\\opg\\linkedlist\\linkedlist\\mojlinkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|solutionrelative:linkedlist\\mojlinkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|c:\\spse\\opg\\linkedlist\\linkedlist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|solutionrelative:linkedlist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|c:\\spse\\opg\\linkedlist\\linkedlist\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|C:\\SPSE\\OPG\\LinkedList\\linkedlist\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F991CAA1-521C-469B-B0B7-BC3388881FEC}|LinkedList\\LinkedList.csproj|solutionrelative:linkedlist\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MojLinkedList.cs",
               "DocumentMoniker": "C:\\SPSE\\OPG\\LinkedList\\LinkedList\\MojLinkedList.cs",
               "RelativeDocumentMoniker": "LinkedList\\MojLinkedList.cs",
               "ToolTip": "C:\\SPSE\\OPG\\LinkedList\\LinkedList\\MojLinkedList.cs",
               "RelativeToolTip": "LinkedList\\MojLinkedList.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAWwA0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T10:57:04.261Z",
               "EditorCaption": ""
@@ -45,20 +45,20 @@
               "RelativeDocumentMoniker": "LinkedList\\Node.cs",
               "ToolTip": "C:\\SPSE\\OPG\\LinkedList\\LinkedList\\Node.cs",
               "RelativeToolTip": "LinkedList\\Node.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T10:51:55.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\SPSE\\OPG\\LinkedList\\LinkedList\\Program.cs",
               "RelativeDocumentMoniker": "LinkedList\\Program.cs",
-              "ToolTip": "C:\\SPSE\\OPG\\LinkedList\\LinkedList\\Program.cs",
-              "RelativeToolTip": "LinkedList\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAuAAAAAAAAAA==",
+              "ToolTip": "C:\\SPSE\\OPG\\LinkedList\\LinkedList\\Program.cs*",
+              "RelativeToolTip": "LinkedList\\Program.cs*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAIwB8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T10:50:05.611Z",
               "EditorCaption": ""
