@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\SPSE\\OPG\\2024-9-25\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{860690DF-1D24-40DB-BCBE-5860C17FAD7F}|2024-9-25\\2024-9-25.csproj|c:\\spse\\opg\\2024-9-25\\2024-9-25\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860690DF-1D24-40DB-BCBE-5860C17FAD7F}|2024-9-25\\2024-9-25.csproj|solutionrelative:2024-9-25\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\SPSE\\OPG\\2024-9-25\\2024-9-25\\Program.cs",
+              "RelativeDocumentMoniker": "2024-9-25\\Program.cs",
+              "ToolTip": "C:\\SPSE\\OPG\\2024-9-25\\2024-9-25\\Program.cs",
+              "RelativeToolTip": "2024-9-25\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwB0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:50:35.254Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

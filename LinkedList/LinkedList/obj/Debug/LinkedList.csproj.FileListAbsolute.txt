@@ -1,0 +1,7 @@
+C:\SPSE\OPG\LinkedList\LinkedList\bin\Debug\LinkedList.exe.config
+C:\SPSE\OPG\LinkedList\LinkedList\bin\Debug\LinkedList.exe
+C:\SPSE\OPG\LinkedList\LinkedList\bin\Debug\LinkedList.pdb
+C:\SPSE\OPG\LinkedList\LinkedList\obj\Debug\LinkedList.csproj.AssemblyReference.cache
+C:\SPSE\OPG\LinkedList\LinkedList\obj\Debug\LinkedList.csproj.CoreCompileInputs.cache
+C:\SPSE\OPG\LinkedList\LinkedList\obj\Debug\LinkedList.exe
+C:\SPSE\OPG\LinkedList\LinkedList\obj\Debug\LinkedList.pdb
