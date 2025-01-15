@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TreeSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a150f0f0c8f5a06f4e3fa21c4a2605548659231e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a667f4b2e5bb433fe5844f283fbdf9df5b390f79")]
 [assembly: System.Reflection.AssemblyProductAttribute("TreeSort")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TreeSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

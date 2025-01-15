@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\SPSE\\OPG\\TreeSort\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3956AAEE-B562-416B-80CE-D08A8329357C}|TreeSort\\TreeSort.csproj|c:\\spse\\opg\\treesort\\treesort\\treesort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3956AAEE-B562-416B-80CE-D08A8329357C}|TreeSort\\TreeSort.csproj|solutionrelative:treesort\\treesort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BEDB8464-166B-4389-BADC-9EFE6A29A873}|TreeSort\\TreeSort.csproj|c:\\spse\\opg\\treesort\\treesort\\treesort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEDB8464-166B-4389-BADC-9EFE6A29A873}|TreeSort\\TreeSort.csproj|solutionrelative:treesort\\treesort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEDB8464-166B-4389-BADC-9EFE6A29A873}|TreeSort\\TreeSort.csproj|c:\\spse\\opg\\treesort\\treesort\\nodet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEDB8464-166B-4389-BADC-9EFE6A29A873}|TreeSort\\TreeSort.csproj|solutionrelative:treesort\\nodet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NodeT.cs",
+              "DocumentMoniker": "C:\\SPSE\\OPG\\TreeSort\\TreeSort\\NodeT.cs",
+              "RelativeDocumentMoniker": "TreeSort\\NodeT.cs",
+              "ToolTip": "C:\\SPSE\\OPG\\TreeSort\\TreeSort\\NodeT.cs",
+              "RelativeToolTip": "TreeSort\\NodeT.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAUwBgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T10:50:11.047Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +41,9 @@
               "RelativeDocumentMoniker": "TreeSort\\TreeSort.cs",
               "ToolTip": "C:\\SPSE\\OPG\\TreeSort\\TreeSort\\TreeSort.cs",
               "RelativeToolTip": "TreeSort\\TreeSort.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAowGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T07:35:51.729Z",
+              "WhenOpened": "2025-01-13T10:49:11.508Z",
               "EditorCaption": ""
             }
           ]
