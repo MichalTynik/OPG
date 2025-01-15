@@ -41,46 +41,30 @@
                     root = newNode;
                     return;
                 }
-                if (root.Value < x)
-                    if (root.Right == null)
-                    {
-                        root.Right = newNode;
-                    }
-                    else
-                    {
-                        NodeT link = root;
-                        Insert(x, link);
-                    }
-                else
-                    if (root.Left == null)
-                {
-                    root.Left = newNode;
-                }
-                else
-                {
-                    NodeT link = root;
-                    Insert(x, link);
-                }
-            }
 
-            public void Insert(int x, NodeT link)
-            {
-                NodeT newNode = new NodeT(x);
-                NodeT newLink = link;
-                if (root.Value < x)
-                    if (root.Right == null)
+                while (true)
+                {
+                    if (root.Value < x)
                     {
-                        root.Right = newNode;
+                        if (root.Right == null)
+                        {
+                            root.Right = newNode;
+                            return;
+
+                        }
+                            NodeT link = root;
                     }
                     else
-                        Insert(x, link);
-                else
-                    if (root.Left == null)
-                {
-                    root.Left = newNode;
+                    {
+                        if (root.Left == null)
+                        {
+                            root.Left = newNode;
+                            return;
+                        }
+                            NodeT link = root;
+                    }
+                        
                 }
-                else
-                    Insert(x, link);
             }
 
             public string Print(NodeT node)
