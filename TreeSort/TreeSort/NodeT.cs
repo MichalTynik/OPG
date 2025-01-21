@@ -18,11 +18,9 @@ namespace Tree
         public NodeT? Left { get; set; }
 
         public NodeT? Right { get; set; }
-
         public override String ToString()
         {
-            return
-                    "value=" + value;
+            return value.ToString();
         }
 
     }

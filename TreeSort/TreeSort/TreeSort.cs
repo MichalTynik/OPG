@@ -12,19 +12,22 @@
     {
         internal class TreeSort
         {
-            public NodeT root;
+
+            public static NodeT? root;
             static void Main(string[] args)
             {
+
                 TreeSort tree = new TreeSort();
-                tree.Insert(25);
+
+                tree.Insert(ref root, 25);
                 Console.WriteLine(tree);
-                tree.Insert(10);
+                tree.Insert(ref root, 10);
                 Console.WriteLine(tree);
-                tree.Insert(100);
+                tree.Insert(ref root, 100);
                 Console.WriteLine(tree);
-                tree.Insert(30);
+                tree.Insert(ref root, 30);
                 Console.WriteLine(tree);
-                tree.Insert(50);
+                tree.Insert(ref root, 50);
                 Console.WriteLine(tree);
             }
 
@@ -33,65 +36,52 @@
                 root = null;
             }
 
-            public void Insert(int x)
+            public void Insert(ref NodeT node, int x)
             {
-                NodeT newNode = new NodeT(x);
-                if (root == null)
+                if (node == null)
                 {
-                    root = newNode;
+                    node = new NodeT(x);
                     return;
                 }
 
-                while (true)
+                if (x < node.Value)
                 {
-                    if (root.Value < x)
-                    {
-                        if (root.Right == null)
-                        {
-                            root.Right = newNode;
-                            return;
-
-                        }
-                            NodeT link = root;
-                    }
-                    else
-                    {
-                        if (root.Left == null)
-                        {
-                            root.Left = newNode;
-                            return;
-                        }
-                            NodeT link = root;
-                    }
-                        
+                    node = node.Left;
+                    Insert(ref node, x);
+                }
+                else
+                {
+                    node = node.Right;
+                    Insert(ref node, x);
                 }
             }
-
-            public string Print(NodeT node)
+            private string Print(List<NodeT> nodes, string res)
             {
-                string result = "";
-                if (node.Left != null)
+                if (nodes == null || !nodes.Any())
+                    return res;
+
+                List<NodeT> nextLevel = new List<NodeT>();
+
+                foreach (var item in nodes)
                 {
-                    result = Print(node.Left);
+                    res += item.ToString() + " ";
+                    if (item.Left != null)
+                        nextLevel.Add(item.Left);
+                    if (item.Right != null)
+                        nextLevel.Add(item.Right);
                 }
-                result += $"{node.Value}";
-                if (node.Right != null)
-                {
-                    result += Print(node.Right);
-                }
-                return result;
+
+                res += "\n";
+                return Print(nextLevel, res);
             }
+
 
             public override string ToString()
             {
-                //return "Tree{ " +
-                //         "root: " + (root != null ? root : "null") + ", " +
-                //         "left: " + (root?.Left != null ? root.Left : "null") + ", " +
-                //         "right: " + (root?.Right != null ? root.Right : "null") +
-                //         " }";
-                return Print(root);
+                return Print(new List<NodeT>() { root }, "");
             }
         }
     }
-
 }
+
+
