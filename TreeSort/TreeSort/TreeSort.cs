@@ -19,15 +19,17 @@
 
                 TreeSort tree = new TreeSort();
 
-                tree.Insert(ref root, 25);
+                tree.Insert(25);
                 Console.WriteLine(tree);
-                tree.Insert(ref root, 10);
+                tree.Insert( 10);
                 Console.WriteLine(tree);
-                tree.Insert(ref root, 100);
+                tree.Insert( 100);
                 Console.WriteLine(tree);
-                tree.Insert(ref root, 30);
+                tree.Insert( 30);
                 Console.WriteLine(tree);
-                tree.Insert(ref root, 50);
+                tree.Insert(50);
+                Console.WriteLine(tree);
+                tree.Insert(120);
                 Console.WriteLine(tree);
             }
 
@@ -36,49 +38,82 @@
                 root = null;
             }
 
-            public void Insert(ref NodeT node, int x)
+            public void Insert(int x)
             {
-                if (node == null)
-                {
-                    node = new NodeT(x);
-                    return;
-                }
+                root = InsertRec(root, x);
+            }
 
-                if (x < node.Value)
-                {
-                    node = node.Left;
-                    Insert(ref node, x);
-                }
+            private NodeT? InsertRec(NodeT? rootLink, int x)
+            {
+                if (rootLink == null)
+                    return new NodeT(x);
+
+                if (x < rootLink.Value)
+                    rootLink.Left = InsertRec(rootLink.Left, x);
                 else
-                {
-                    node = node.Right;
-                    Insert(ref node, x);
-                }
+                    rootLink.Right = InsertRec(rootLink.Right, x);
+                
+                return rootLink;
             }
-            private string Print(List<NodeT> nodes, string res)
+            
+            
+            // private List<int> Print(List<int> values, NodeT rootLink)
+            // {
+            //     if (rootLink != null)
+            //     {
+            //         
+            //         values.Add(rootLink.Value);
+            //         Print(values, rootLink.Left);
+            //         Print(values, rootLink.Right);
+            //     }
+            //     return values;
+            // }
+
+            private List<int> Print(List<NodeT> nodes, List<int> list)
             {
-                if (nodes == null || !nodes.Any())
-                    return res;
-
-                List<NodeT> nextLevel = new List<NodeT>();
-
-                foreach (var item in nodes)
+                if (nodes.Count == 0)
                 {
-                    res += item.ToString() + " ";
-                    if (item.Left != null)
-                        nextLevel.Add(item.Left);
-                    if (item.Right != null)
-                        nextLevel.Add(item.Right);
+                    nodes.Add(root);
+                    list.Add(root.Value);
                 }
 
-                res += "\n";
-                return Print(nextLevel, res);
-            }
+                for (int i = 0; i < nodes.Count; i++)
+                {
+                    if (nodes[i].Left != null)
+                    {
+                        nodes.Add(nodes[i].Left);
+                        list.Add(nodes[i].Left.Value);
+                    }
 
+                    if (nodes[i].Right != null)
+                    {
+                        nodes.Add(nodes[i].Right);
+                        list.Add(nodes[i].Right.Value);
+                    }
+                    nodes.Remove(nodes[i]);
+                }
+                return list;
+            }
+            
 
             public override string ToString()
             {
-                return Print(new List<NodeT>() { root }, "");
+                List<int> list = Print(new List<NodeT>(), new List<int>());
+                string result = string.Empty;
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (i == 0)
+                        result +=list[i].ToString() + "\n";
+                    else
+                    {
+                        if (i +1 < list.Count && list[i] < list[i + 1] && list[i -1] < list[i+1])
+                            result +=  list[i].ToString() + " ";
+                        else
+                            result +=  list[i].ToString() + "\n";
+                    }
+                    
+                }
+                return result;
             }
         }
     }

@@ -20,6 +20,7 @@ namespace Tree
         public NodeT? Right { get; set; }
         public override String ToString()
         {
+            
             return value.ToString();
         }
 
