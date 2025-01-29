@@ -1,0 +1,20 @@
+import random
+pocetHodov = int(input("Zadaj pocet hodov: "))
+pocetStien = int(input("Zadaj pocet stien objektu: "))
+pocetKociek = int(input("Zadaj pocet kociek: "))
+celkovyPocetStien = pocetStien * pocetKociek
+pocetnost = [0]*celkovyPocetStien
+
+for i in range(pocetHodov):
+    cislo = 0
+    for j in range(pocetKociek):
+        cislo += random.randint(1,pocetStien)
+    print(cislo, end=", ")
+    pocetnost[cislo-1] += 1 
+
+maxPocetnost = max(pocetnost)
+minPocetnost = min(pocetnost)
+
+print()
+for i in range(pocetKociek-1, celkovyPocetStien):
+    print(f"{i+1:2}: {pocetnost[i]:6}"+" "*int((pocetnost[i]/maxPocetnost)*100+0.5)+"*")
