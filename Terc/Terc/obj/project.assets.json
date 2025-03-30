@@ -1,0 +1,423 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "AtkSharp/3.24.24.117-develop": {
+        "type": "package",
+        "dependencies": {
+          "GLibSharp": "3.24.24.117-develop"
+        },
+        "compile": {
+          "lib/net8.0/AtkSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/AtkSharp.dll": {}
+        }
+      },
+      "CairoSharp/3.24.24.117-develop": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/CairoSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/CairoSharp.dll": {}
+        }
+      },
+      "GdkSharp/3.24.24.117-develop": {
+        "type": "package",
+        "dependencies": {
+          "CairoSharp": "3.24.24.117-develop",
+          "GLibSharp": "3.24.24.117-develop",
+          "GioSharp": "3.24.24.117-develop",
+          "PangoSharp": "3.24.24.117-develop"
+        },
+        "compile": {
+          "lib/net8.0/GdkSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GdkSharp.dll": {}
+        }
+      },
+      "GioSharp/3.24.24.117-develop": {
+        "type": "package",
+        "dependencies": {
+          "GLibSharp": "3.24.24.117-develop"
+        },
+        "compile": {
+          "lib/net8.0/GioSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GioSharp.dll": {}
+        }
+      },
+      "GLibSharp/3.24.24.117-develop": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GLibSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GLibSharp.dll": {}
+        }
+      },
+      "GtkDotNet/6.0.4-alpha": {
+        "type": "package",
+        "dependencies": {
+          "LinqTools": "5.3.0"
+        },
+        "compile": {
+          "lib/net6.0/GtkDotNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/GtkDotNet.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GtkSharp/3.24.24.117-develop": {
+        "type": "package",
+        "dependencies": {
+          "AtkSharp": "3.24.24.117-develop",
+          "CairoSharp": "3.24.24.117-develop",
+          "GLibSharp": "3.24.24.117-develop",
+          "GdkSharp": "3.24.24.117-develop",
+          "GioSharp": "3.24.24.117-develop",
+          "PangoSharp": "3.24.24.117-develop"
+        },
+        "compile": {
+          "lib/net8.0/GtkSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GtkSharp.dll": {}
+        },
+        "build": {
+          "build/GtkSharp.targets": {}
+        }
+      },
+      "LinqTools/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Linq.Async": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/LinqTools.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/LinqTools.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "PangoSharp/3.24.24.117-develop": {
+        "type": "package",
+        "dependencies": {
+          "CairoSharp": "3.24.24.117-develop",
+          "GLibSharp": "3.24.24.117-develop"
+        },
+        "compile": {
+          "lib/net8.0/PangoSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/PangoSharp.dll": {}
+        }
+      },
+      "System.Linq.Async/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0"
+        },
+        "compile": {
+          "ref/net6.0/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AtkSharp/3.24.24.117-develop": {
+      "sha512": "LqhUEqLkNC4Uybx/IKQenGDSvDFrjGE6w9uQ1zZwyHuGyDSZhiqeg6PyzU1FaQ3NF+uGwbFxDcDYJCVM2JoTpw==",
+      "type": "package",
+      "path": "atksharp/3.24.24.117-develop",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "atksharp.3.24.24.117-develop.nupkg.sha512",
+        "atksharp.nuspec",
+        "lib/net8.0/AtkSharp.dll",
+        "lib/netstandard2.0/AtkSharp.dll"
+      ]
+    },
+    "CairoSharp/3.24.24.117-develop": {
+      "sha512": "5zsEUuksviQPiZHdXyiuzVbn2wVnaBURTyENkVmZuHzr5T8mONAm+15LUu19Z3xbFCKx0CH4GJzuO7qW14nNQw==",
+      "type": "package",
+      "path": "cairosharp/3.24.24.117-develop",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cairosharp.3.24.24.117-develop.nupkg.sha512",
+        "cairosharp.nuspec",
+        "lib/net8.0/CairoSharp.dll",
+        "lib/netstandard2.0/CairoSharp.dll"
+      ]
+    },
+    "GdkSharp/3.24.24.117-develop": {
+      "sha512": "M7N7gMqjrW2NnAWcqR2E5/x5JUuz2jT3mFTTD7raHWF6llW7fiP3zxJfIiJHwHIOjSd8pfu7G8bVdCHwAd8t8g==",
+      "type": "package",
+      "path": "gdksharp/3.24.24.117-develop",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gdksharp.3.24.24.117-develop.nupkg.sha512",
+        "gdksharp.nuspec",
+        "lib/net8.0/GdkSharp.dll",
+        "lib/netstandard2.0/GdkSharp.dll"
+      ]
+    },
+    "GioSharp/3.24.24.117-develop": {
+      "sha512": "PxXTbBumyzJHt/h6qED0MYO3vEAY4vBHbgDrWFp1Kap5uUSpIMV8GPH2UaswX0wEtgdkMrVdhYGdeSllMwHWHw==",
+      "type": "package",
+      "path": "giosharp/3.24.24.117-develop",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "giosharp.3.24.24.117-develop.nupkg.sha512",
+        "giosharp.nuspec",
+        "lib/net8.0/GioSharp.dll",
+        "lib/netstandard2.0/GioSharp.dll"
+      ]
+    },
+    "GLibSharp/3.24.24.117-develop": {
+      "sha512": "NPHNJBR0FTZRMREP7ZtdFOlPFTRJwecYSCIWiJMvRybasH5xyavf7UmPkMzrGGJdt5ne4ZEZ3Yj+uOcqVKnkqg==",
+      "type": "package",
+      "path": "glibsharp/3.24.24.117-develop",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "glibsharp.3.24.24.117-develop.nupkg.sha512",
+        "glibsharp.nuspec",
+        "lib/net8.0/GLibSharp.dll",
+        "lib/netstandard2.0/GLibSharp.dll"
+      ]
+    },
+    "GtkDotNet/6.0.4-alpha": {
+      "sha512": "AYryBeMeVqgBDUR8UCkywzqm5kOfpAqzFdqp5vyA87QdSodsbXXSo4r7cjVJzqhtukSjZnGy2IkW7nBDttTXaA==",
+      "type": "package",
+      "path": "gtkdotnet/6.0.4-alpha",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "gtkdotnet.6.0.4-alpha.nupkg.sha512",
+        "gtkdotnet.nuspec",
+        "lib/net6.0/GtkDotNet.dll",
+        "lib/net6.0/GtkDotNet.xml"
+      ]
+    },
+    "GtkSharp/3.24.24.117-develop": {
+      "sha512": "qc4oBmHw4VoMk+tTurM6g2FRCl8yot/oOAy9ytmvzQ2+zI9T/SLF+Q534R1q8z3uz4q9sm46QOJOQOfAyOlKnQ==",
+      "type": "package",
+      "path": "gtksharp/3.24.24.117-develop",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/GtkSharp.targets",
+        "gtksharp.3.24.24.117-develop.nupkg.sha512",
+        "gtksharp.nuspec",
+        "lib/net8.0/GtkSharp.dll",
+        "lib/netstandard2.0/GtkSharp.dll"
+      ]
+    },
+    "LinqTools/5.3.0": {
+      "sha512": "NEoLhsfRrkaRMYcafRZAE2MBuLjprQ+Ow6hBtE+qJclYZY0EbweOlS1g1FUbiIFuZQ6ZMXYORqnZXolFL66jlg==",
+      "type": "package",
+      "path": "linqtools/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "lib/net6.0/LinqTools.dll",
+        "lib/net6.0/LinqTools.xml",
+        "linqtools.5.3.0.nupkg.sha512",
+        "linqtools.nuspec"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "sha512": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "PangoSharp/3.24.24.117-develop": {
+      "sha512": "WycHWMa+cd07LrbFMi4ulvFYbzz2WrjNw2F2MsJTZKW63J7Yxw9gHA5vMAkF6h/jT0beAi0+0FLqDyFm4xJszg==",
+      "type": "package",
+      "path": "pangosharp/3.24.24.117-develop",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net8.0/PangoSharp.dll",
+        "lib/netstandard2.0/PangoSharp.dll",
+        "pangosharp.3.24.24.117-develop.nupkg.sha512",
+        "pangosharp.nuspec"
+      ]
+    },
+    "System.Linq.Async/6.0.1": {
+      "sha512": "0YhHcaroWpQ9UCot3Pizah7ryAzQhNvobLMSxeDIGmnXfkQn8u5owvpOH0K6EVB+z9L7u6Cc4W17Br/+jyttEQ==",
+      "type": "package",
+      "path": "system.linq.async/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Logo.png",
+        "lib/net48/System.Linq.Async.dll",
+        "lib/net48/System.Linq.Async.xml",
+        "lib/net6.0/System.Linq.Async.dll",
+        "lib/net6.0/System.Linq.Async.xml",
+        "lib/netstandard2.0/System.Linq.Async.dll",
+        "lib/netstandard2.0/System.Linq.Async.xml",
+        "lib/netstandard2.1/System.Linq.Async.dll",
+        "lib/netstandard2.1/System.Linq.Async.xml",
+        "ref/net48/System.Linq.Async.dll",
+        "ref/net48/System.Linq.Async.xml",
+        "ref/net6.0/System.Linq.Async.dll",
+        "ref/net6.0/System.Linq.Async.xml",
+        "ref/netstandard2.0/System.Linq.Async.dll",
+        "ref/netstandard2.0/System.Linq.Async.xml",
+        "ref/netstandard2.1/System.Linq.Async.dll",
+        "ref/netstandard2.1/System.Linq.Async.xml",
+        "system.linq.async.6.0.1.nupkg.sha512",
+        "system.linq.async.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "GtkDotNet >= 6.0.4-alpha",
+      "GtkSharp >= 3.24.24.117-develop"
+    ]
+  },
+  "packageFolders": {
+    "/home/michaltynik/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/Terc.csproj",
+      "projectName": "Terc",
+      "projectPath": "/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/Terc.csproj",
+      "packagesPath": "/home/michaltynik/.nuget/packages/",
+      "outputPath": "/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/michaltynik/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "GtkDotNet": {
+            "target": "Package",
+            "version": "[6.0.4-alpha, )"
+          },
+          "GtkSharp": {
+            "target": "Package",
+            "version": "[3.24.24.117-develop, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/home/michaltynik/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

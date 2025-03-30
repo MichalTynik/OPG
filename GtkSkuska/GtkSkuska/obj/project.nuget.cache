@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "H+K8Sy8YZu4=",
+  "success": true,
+  "projectFilePath": "/home/michaltynik/Dokumenty/SPSE/OPG/GtkSkuska/GtkSkuska/GtkSkuska.csproj",
+  "expectedPackageFiles": [
+    "/home/michaltynik/.nuget/packages/atksharp/3.24.24.117-develop/atksharp.3.24.24.117-develop.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/cairosharp/3.24.24.117-develop/cairosharp.3.24.24.117-develop.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/gdksharp/3.24.24.117-develop/gdksharp.3.24.24.117-develop.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/giosharp/3.24.24.117-develop/giosharp.3.24.24.117-develop.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/glibsharp/3.24.24.117-develop/glibsharp.3.24.24.117-develop.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/gtksharp/3.24.24.117-develop/gtksharp.3.24.24.117-develop.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/pangosharp/3.24.24.117-develop/pangosharp.3.24.24.117-develop.nupkg.sha512"
+  ],
+  "logs": []
+}
