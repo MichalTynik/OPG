@@ -1,34 +1,45 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using Gdk;
 using Gtk;
-using Terc;
+using Key = Gtk.Key;
+using Window = Gtk.Window;
 
 public class TercWindow : Gtk.Window
 {
-    private Fixed fixedCross;
-    private Image crosshairImage;
-    private GameBackEnd  gameBackEnd;
+    static CancellationTokenSource ctsSource = new CancellationTokenSource();
+    CancellationToken cts = ctsSource.Token;
+    private readonly Fixed _fixedCross;
+    private readonly Image _crosshairImage;
+    private Window _window;
+    private List<Image> _shotStorage =  new List<Image>();
+    
+    private bool _startToggle;
 
-    public TercWindow() : base("Terc")
+    
+    
+    public TercWindow() : base("TercWindow")
     {
+        _window = this;
         SetDefaultSize(800, 900);
         Destroyed += (sender, e) => Application.Quit();
         BorderWidth = 10;
         
 
-        fixedCross = new Fixed();
-        fixedCross.SetSizeRequest(800, 900);
-        Add(fixedCross);
+        _fixedCross = new Fixed();
+        _fixedCross.SetSizeRequest(800, 900);
+        Add(_fixedCross);
 
-        fixedCross.Put(CreateVBox(), 0, 0);
-        crosshairImage = CreateCrossHair();
-        fixedCross.Put(crosshairImage, 400, 400);
+        
+        _fixedCross.Put(CreateVBox(), 0, 0);
+        _crosshairImage = CreateCrossHair();
+        _fixedCross.Put(_crosshairImage, 360, 360);
 
-        MotionNotifyEvent += OnMouseMotionEvent;
-        Events |= EventMask.PointerMotionMask;
+        KeyPressEvent += ShotKeyListener;
 
         ShowAll();
     }
+    
 
     private VBox CreateVBox()
     {
@@ -36,11 +47,11 @@ public class TercWindow : Gtk.Window
         Scale fatigue = new Scale(Orientation.Horizontal, 0, 10, 1);
         Button start = new Button("Start");
         Entry inputField = new Entry();
-        Label Fatiquelabel = new Label("Fatigue");
-        Label Weatherlabel = new Label("Weather");
-        Label Windlabel = new Label("Sever");
-
-        start.Pressed += gameBackEnd.StartOrNull;
+        Label fatiqueLabel = new Label("Fatigue");
+        Label weatherLabel = new Label("Weather");
+        Label windLabel = new Label("Sever");
+        
+        start.Pressed += StartOrNull;
         
         Grid grid = new Grid();
         grid.ColumnSpacing = 50;
@@ -49,9 +60,9 @@ public class TercWindow : Gtk.Window
         grid.Attach(weather, 0, 1, 3, 1);
         grid.Attach(fatigue, 0, 3, 3, 1);
         grid.Attach(inputField, 3, 1, 1, 1);
-        grid.Attach(Fatiquelabel, 0, 2, 1, 1);
-        grid.Attach(Weatherlabel, 0, 0, 1, 1);
-        grid.Attach(Windlabel, 3, 2, 1, 1);
+        grid.Attach(fatiqueLabel, 0, 2, 1, 1);
+        grid.Attach(weatherLabel, 0, 0, 1, 1);
+        grid.Attach(windLabel, 3, 2, 1, 1);
         grid.Attach(start, 5, 1, 1, 1);
 
         VBox vbox = new VBox(false, 0);
@@ -91,23 +102,107 @@ public class TercWindow : Gtk.Window
         }
     }
 
-    private void OnMouseMotionEvent(object o, MotionNotifyEventArgs args)
+    public void OnMouseMotionEvent(object o, MotionNotifyEventArgs args)
     {
         if (args.Event.Device != null && args.Event.Window != null)
         {
             int x, y;
             ModifierType mask;
             args.Event.Window.GetDevicePosition(args.Event.Device, out x, out y, out mask);
-            x = Math.Max(0, Math.Min(x, 800 - crosshairImage.Allocation.Width));
-            y = Math.Max(0, Math.Min(y, 900 - crosshairImage.Allocation.Height));
-            fixedCross.Move(crosshairImage, x, y);
+            Console.WriteLine("x: "+x + " y:" + y);
+            x = Math.Max(0, Math.Min(x, 800 - _crosshairImage.Allocation.Width));
+            y = Math.Max(0, Math.Min(y, 900 - _crosshairImage.Allocation.Height));
+            _fixedCross.Move(_crosshairImage, x-80, y-80);
+            
+        }
+    }
+    
+    public void StartOrNull(object? o, EventArgs args)
+    {
+        if (!_startToggle)
+        {
+            
+            //Task myTask = RealisticSims();
+            MotionNotifyEvent += OnMouseMotionEvent;
+            Events |= EventMask.PointerMotionMask;
+        }
+        else
+        {
+            ctsSource.Cancel();
+            MotionNotifyEvent -= OnMouseMotionEvent;
+            _fixedCross.Move(_crosshairImage, 360, 360);
+            ResetTarget();
+        }
+            
+        _startToggle = !_startToggle;
+    }
+
+    private void ResetTarget()
+    {
+        foreach (var var in _shotStorage)
+        {
+            var.Hide();
         }
     }
 
+    private void ShotKeyListener(object? o, KeyPressEventArgs args)
+    {
+        if (args.Event.Key == Gdk.Key.s)
+        {
+            Console.WriteLine("Shot!");
+            UpdateImage();
+        }
+    }
+
+    private void UpdateImage()
+    {
+        try
+        {
+            Pixbuf pix = new Pixbuf("/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/bullet.png");
+            Pixbuf pixScaled = pix.ScaleSimple(50, 50, InterpType.Bilinear);
+            Image image = new Image(pixScaled);
+            _shotStorage.Add(image);
+            _fixedCross.Put(image, GetCrosshairPosition().x-20,GetCrosshairPosition().y-55);
+            image.Show();
+        }
+        catch (GLib.GException e)
+        {
+            Console.WriteLine("Failed to load shot image "+e);
+            throw;
+        }
+        
+    }
+
+    private async Task RealisticSims()
+    {
+        int x, y ;
+        ModifierType mask;
+        while (true)
+        {
+            if (cts.IsCancellationRequested)
+                cts.ThrowIfCancellationRequested();
+            x = GetCrosshairPosition().x;
+            y = GetCrosshairPosition().y;
+            x = Math.Max(0, Math.Min(x, 800 - _crosshairImage.Allocation.Width));
+            y = Math.Max(0, Math.Min(y, 900 - _crosshairImage.Allocation.Height));
+            _fixedCross.Move(_crosshairImage, x-80, y-80);
+        }
+    }
+
+    (int x, int y) GetCrosshairPosition()
+    {
+        _crosshairImage.TranslateCoordinates(_window, 0, 0, out int x, out int y);
+        return (x, y);
+    }
     public static void Main(string[] args)
     {
+        
         Application.Init();
         new TercWindow();
         Application.Run();
     }
 }
+//naprogramovat bodovanie
+//Funkcia ktora bude fungovat ako tranform to point kde budu 4 sekcie 1. +x -y 2. -x -y 3. -x +y 4. +x +y
+//Smeri vetra (Posunie sa nulty bod)
+//databaza
