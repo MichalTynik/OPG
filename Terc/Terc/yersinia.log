@@ -1,0 +1,44 @@
+# yersinia v0.8.2 started in michaltynik-ASUS-TUF-Gaming-A15-FA507NU-FA507NU on Wed Apr  2 13:17:23 2025
+
+Network Interface wlp0s20f3
+
+ wlp0s20f3 iflinkname EN10MB
+ wlp0s20f3 iflinkdesc Ethernet
+ wlp0s20f3 MAC = 548d.5a89.c14b
+Network Interface lo
+
+ lo iflinkname EN10MB
+ lo iflinkdesc Ethernet
+ lo MAC = 0000.0000.0000
+Network Interface enp1s0
+
+ enp1s0 iflinkname EN10MB
+ enp1s0 iflinkdesc Ethernet
+ enp1s0 MAC = 3822.e22b.2c13
+Network Interface bluetooth0
+Network Interface bluetooth-monitor
+pcap_open_live failed: bluetooth-monito: No such device exists (No such device exists)
+Network Interface nflog
+Network Interface nfqueue
+Network Interface dbus-system
+Network Interface dbus-session
+pcap_open_live failed: dbus-session: Failed to get session bus: /usr/bin/dbus-launch terminated abnormally without any error message
+
+ th_uptime thread = 4DC006C0
+
+ ncurses_gui_th = 1293944512
+ Notification: Warning: interface wlp0s20f3 selected as the default one
+
+ ncurses_gui_th_exit start...
+ ncurses_gui_th_exit finish...
+ g00dbye function called from 4EC14800
+
+ ints_destroy started...
+ ints_destroy killing pcap_listener(1314916032)...
+
+ thread_destroy 4EC14800 destroying 4E6006C0...
+ thread_destroy 4EC14800 after PTHREAD_JOIN 4E6006C0...
+ ints_destroy finished...
+ Showing MOTD..
+# yersinia finished on Wed Apr  2 13:18:38 2025
+
