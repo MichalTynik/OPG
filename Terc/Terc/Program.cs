@@ -4,21 +4,23 @@ using Gdk;
 using Gtk;
 using Key = Gtk.Key;
 using Window = Gtk.Window;
+using System.Threading.Tasks;
 
 public class TercWindow : Gtk.Window
 {
-    static CancellationTokenSource _ctsSource = new CancellationTokenSource();
-    CancellationToken _cts = _ctsSource.Token;
     private readonly Fixed _fixedCross;
     private readonly Image _crosshairImage;
     private Window _window;
     private List<Image> _shotStorage = new List<Image>();
-    private Gtk.Scale _weather;
 
     private bool _startToggle;
-    private int _totalScore = 0; // Add score variable
-    private Label _scoreLabel; // Add score label
-
+    private int _totalScore = 0;
+    private Label _scoreLabel;
+    private Scale _weatherScale;
+    private Scale _fatigueScale;
+    private int _crosshairX = 360; // Current crosshair X position
+    private int _crosshairY = 360; // Current crosshair Y position
+    private Task _movementTask; // Task for continuous movement
 
     public TercWindow() : base("TercWindow")
     {
@@ -27,32 +29,28 @@ public class TercWindow : Gtk.Window
         Destroyed += (sender, e) => Application.Quit();
         BorderWidth = 10;
 
-
         _fixedCross = new Fixed();
         _fixedCross.SetSizeRequest(800, 900);
         Add(_fixedCross);
 
-
         _fixedCross.Put(CreateVBox(), 0, 0);
         _crosshairImage = CreateCrossHair();
-        _fixedCross.Put(_crosshairImage, 360, 360);
+        _fixedCross.Put(_crosshairImage, _crosshairX, _crosshairY);
 
         KeyPressEvent += ShotKeyListener;
-
         ShowAll();
     }
 
-
     private VBox CreateVBox()
     {
-        _weather = new Scale(Orientation.Horizontal, 0, 10, 1);
-        Scale fatigue = new Scale(Orientation.Horizontal, 0, 10, 1);
+        _weatherScale = new Scale(Orientation.Horizontal, 0, 10, 1);
+        _fatigueScale = new Scale(Orientation.Horizontal, 0, 10, 1);
         Button start = new Button("Start");
         Entry inputField = new Entry();
         Label fatiqueLabel = new Label("Fatigue");
         Label weatherLabel = new Label("Weather");
         Label windLabel = new Label("Sever");
-        _scoreLabel = new Label($"Score: {_totalScore}"); // Initialize score label
+        _scoreLabel = new Label($"Score: {_totalScore}");
 
         start.Pressed += StartOrNull;
 
@@ -60,14 +58,14 @@ public class TercWindow : Gtk.Window
         grid.ColumnSpacing = 50;
         grid.RowSpacing = 10;
 
-        grid.Attach(_weather, 0, 1, 3, 1);
-        grid.Attach(fatigue, 0, 3, 3, 1);
+        grid.Attach(_weatherScale, 0, 1, 3, 1);
+        grid.Attach(_fatigueScale, 0, 3, 3, 1);
         grid.Attach(inputField, 3, 1, 1, 1);
         grid.Attach(fatiqueLabel, 0, 2, 1, 1);
         grid.Attach(weatherLabel, 0, 0, 1, 1);
         grid.Attach(windLabel, 3, 2, 1, 1);
         grid.Attach(start, 5, 1, 1, 1);
-        grid.Attach(_scoreLabel, 5, 2, 1, 1); // Attach score label to grid
+        grid.Attach(_scoreLabel, 5, 2, 1, 1);
 
         VBox vbox = new VBox(false, 0);
         vbox.PackStart(CreateTarget(), true, true, 0);
@@ -75,67 +73,69 @@ public class TercWindow : Gtk.Window
         return vbox;
     }
 
-    private Image CreateTarget()
+    private async Task MoveCrosshair()
     {
-        try
+        Random random = new Random();
+        int originalMouseX = 0; // Original mouse X position
+        int originalMouseY = 0; // Original mouse Y position
+        int targetX = _crosshairX;
+        int targetY = _crosshairY;
+
+        Display.Default.GetPointer(out originalMouseX, out originalMouseY, out ModifierType mask); // initial location of the mouse
+
+        while (_startToggle)
         {
-            Pixbuf pxbf = new Pixbuf("/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/terc.jpg");
-            Pixbuf rescaledPixbuf = pxbf.ScaleSimple(800, 800, InterpType.Bilinear);
-            return new Image { Pixbuf = rescaledPixbuf };
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error loading target image: {ex.Message}");
-            return new Image();
+            int windIntensity = (int)_weatherScale.Value;
+            int fatigueIntensity = (int)_fatigueScale.Value;
+
+            double windFactor = windIntensity / 10.0;
+            double fatigueFactor = fatigueIntensity / 5.0;
+
+            int offsetX = (int)(random.NextDouble() * 2 * (windFactor + fatigueFactor) - (windFactor + fatigueFactor));
+            int offsetY = (int)(random.NextDouble() * 2 * (windFactor + fatigueFactor) - (windFactor + fatigueFactor));
+
+            // Calculate target position based on original mouse position
+            targetX = originalMouseX + offsetX - 40;
+            targetY = originalMouseY + offsetY - 40;
+
+            targetX = Math.Max(0, Math.Min(targetX, 800 - _crosshairImage.Allocation.Width + 100));
+            targetY = Math.Max(0, Math.Min(targetY, 900 - _crosshairImage.Allocation.Height - 80));
+
+            // Smooth movement towards target
+            _crosshairX = (int)(_crosshairX * 0.95 + targetX * 0.05);
+            _crosshairY = (int)(_crosshairY * 0.95 + targetY * 0.05);
+
+            Application.Invoke(delegate { _fixedCross.Move(_crosshairImage, _crosshairX - 80, _crosshairY - 80); });
+
+            await Task.Delay(30);
+
+            // Update original mouse position
+            Display.Default.GetPointer(out originalMouseX, out originalMouseY, out mask);
         }
     }
 
-    private Image CreateCrossHair()
+    (int x, int y) GetCrosshairPosition()
     {
-        try
-        {
-            Pixbuf pxbf = new Pixbuf("/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/crosshair.png");
-            Pixbuf rescaledPixbuf = pxbf.ScaleSimple(80, 80, InterpType.Bilinear);
-            return new Image { Pixbuf = rescaledPixbuf };
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error loading crosshair image: {ex.Message}");
-            return new Image(); // Return an empty image on error.
-        }
-    }
-
-    public void OnMouseMotionEvent(object o, MotionNotifyEventArgs args)
-    {
-        if (args.Event.Device != null && args.Event.Window != null)
-        {
-            int x, y;
-            ModifierType mask;
-            args.Event.Window.GetDevicePosition(args.Event.Device, out x, out y, out mask);
-            
-            x = Math.Max(0, Math.Min(x, 800 - _crosshairImage.Allocation.Width + 100));
-            y = Math.Max(0, Math.Min(y, 900 - _crosshairImage.Allocation.Height - 80));
-            _fixedCross.Move(_crosshairImage, x , y );
-
-        }
+        _crosshairImage.TranslateCoordinates(_window, 0, 0, out int x, out int y);
+        return (x, y);
     }
 
     public void StartOrNull(object? o, EventArgs args)
     {
-        if (!_startToggle)
+        _startToggle = !_startToggle;
+        if (_startToggle)
         {
-            Task.Run(RealisticSims); // Start RealisticSims as a task
+            _movementTask = Task.Run(MoveCrosshair);
         }
         else
         {
-            _ctsSource.Cancel();
-            _ctsSource = new CancellationTokenSource(); // Reset cancellation token
-            _cts = _ctsSource.Token;
-            _fixedCross.Move(_crosshairImage, 360, 360);
+            _movementTask?.Wait();
+            _movementTask = null;
+            _crosshairX = 360;
+            _crosshairY = 360;
+            Application.Invoke(delegate { _fixedCross.Move(_crosshairImage, _crosshairX - 80, _crosshairY - 80); });
             ResetTarget();
         }
-
-        _startToggle = !_startToggle;
     }
 
     private void ResetTarget()
@@ -166,7 +166,11 @@ public class TercWindow : Gtk.Window
             Pixbuf pixScaled = pix.ScaleSimple(50, 50, InterpType.Bilinear);
             Image image = new Image(pixScaled);
             _shotStorage.Add(image);
-            _fixedCross.Put(image, GetCrosshairPosition().x - 20, GetCrosshairPosition().y - 55);
+            Random shotRandom = new Random();
+            int windIntensity = (int)_weatherScale.Value;
+            int shotX = GetCrosshairPosition().x + shotRandom.Next(-windIntensity / 2, windIntensity / 2);
+            int shotY = GetCrosshairPosition().y + shotRandom.Next(-windIntensity / 2, windIntensity / 2);
+            _fixedCross.Put(image, shotX - 20, shotY - 55);
             image.Show();
         }
         catch (GLib.GException e)
@@ -174,39 +178,8 @@ public class TercWindow : Gtk.Window
             Console.WriteLine("Failed to load shot image " + e);
             throw;
         }
-
     }
 
-    private async Task RealisticSims()
-    {
-        Random random = new Random();
-        while (true)
-        {
-            if (_cts.IsCancellationRequested)
-                _cts.ThrowIfCancellationRequested();
-
-            int x = GetCrosshairPosition().x;
-            int y = GetCrosshairPosition().y;
-
-            int windIntensity = (int)_weather.Value;
-            x += random.Next(-windIntensity/10, windIntensity+1/10);
-            y += random.Next(-windIntensity/10, windIntensity+1/10);
-
-            
-
-            x = Math.Max(0, Math.Min(x, 800 - _crosshairImage.Allocation.Width + 100));
-            y = Math.Max(0, Math.Min(y, 900 - _crosshairImage.Allocation.Height - 80));
-            _fixedCross.Move(_crosshairImage, x, y);
-
-            await Task.Delay(16); 
-        }
-    }
-
-    (int x, int y) GetCrosshairPosition()
-    {
-        _crosshairImage.TranslateCoordinates(_window, 0, 0, out int x, out int y);
-        return (x, y);
-    }
 
     private void CalculateScore()
     {
@@ -231,17 +204,40 @@ public class TercWindow : Gtk.Window
         _scoreLabel.Text = $"Score: {_totalScore}";
     }
 
+    private Image CreateTarget()
+    {
+        try
+        {
+            Pixbuf pxbf = new Pixbuf("/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/terc.jpg");
+            Pixbuf rescaledPixbuf = pxbf.ScaleSimple(800, 800, InterpType.Bilinear);
+            return new Image { Pixbuf = rescaledPixbuf };
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading target image: {ex.Message}");
+            return new Image();
+        }
+    }
+
+    private Image CreateCrossHair()
+    {
+        try
+        {
+            Pixbuf pxbf = new Pixbuf("/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/crosshair.png");
+            Pixbuf rescaledPixbuf = pxbf.ScaleSimple(80, 80, InterpType.Bilinear);
+            return new Image { Pixbuf = rescaledPixbuf };
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading crosshair image: {ex.Message}");
+            return new Image();
+        }
+    }
+
     public static void Main(string[] args)
     {
-
         Application.Init();
         new TercWindow();
         Application.Run();
     }
 }
-//naprogramovat bodovanie
-//Funkcia ktora bude fungovat ako tranform to point kde budu 4 sekcie 1. +x -y 2. -x -y 3. -x +y 4. +x +y
-//Smeri vetra (Posunie sa nulty bod)
-//databaza
-//S:[445,445] 5:[510,445] 4:[590,445] 3:[675,445] 2:[755,445] 1:[835,445]
-
