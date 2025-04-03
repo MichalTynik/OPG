@@ -7,12 +7,13 @@ using Window = Gtk.Window;
 
 public class TercWindow : Gtk.Window
 {
-    static CancellationTokenSource ctsSource = new CancellationTokenSource();
-    CancellationToken cts = ctsSource.Token;
+    static CancellationTokenSource _ctsSource = new CancellationTokenSource();
+    CancellationToken _cts = _ctsSource.Token;
     private readonly Fixed _fixedCross;
     private readonly Image _crosshairImage;
     private Window _window;
     private List<Image> _shotStorage = new List<Image>();
+    private Gtk.Scale _weather;
 
     private bool _startToggle;
     private int _totalScore = 0; // Add score variable
@@ -44,7 +45,7 @@ public class TercWindow : Gtk.Window
 
     private VBox CreateVBox()
     {
-        Scale weather = new Scale(Orientation.Horizontal, 0, 10, 1);
+        _weather = new Scale(Orientation.Horizontal, 0, 10, 1);
         Scale fatigue = new Scale(Orientation.Horizontal, 0, 10, 1);
         Button start = new Button("Start");
         Entry inputField = new Entry();
@@ -59,7 +60,7 @@ public class TercWindow : Gtk.Window
         grid.ColumnSpacing = 50;
         grid.RowSpacing = 10;
 
-        grid.Attach(weather, 0, 1, 3, 1);
+        grid.Attach(_weather, 0, 1, 3, 1);
         grid.Attach(fatigue, 0, 3, 3, 1);
         grid.Attach(inputField, 3, 1, 1, 1);
         grid.Attach(fatiqueLabel, 0, 2, 1, 1);
@@ -111,10 +112,10 @@ public class TercWindow : Gtk.Window
             int x, y;
             ModifierType mask;
             args.Event.Window.GetDevicePosition(args.Event.Device, out x, out y, out mask);
-            Console.WriteLine("x: " + x + " y:" + y);
+            
             x = Math.Max(0, Math.Min(x, 800 - _crosshairImage.Allocation.Width + 100));
             y = Math.Max(0, Math.Min(y, 900 - _crosshairImage.Allocation.Height - 80));
-            _fixedCross.Move(_crosshairImage, x - 80, y - 80);
+            _fixedCross.Move(_crosshairImage, x , y );
 
         }
     }
@@ -123,15 +124,13 @@ public class TercWindow : Gtk.Window
     {
         if (!_startToggle)
         {
-
-            //Task myTask = RealisticSims();
-            MotionNotifyEvent += OnMouseMotionEvent;
-            Events |= EventMask.PointerMotionMask;
+            Task.Run(RealisticSims); // Start RealisticSims as a task
         }
         else
         {
-            ctsSource.Cancel();
-            MotionNotifyEvent -= OnMouseMotionEvent;
+            _ctsSource.Cancel();
+            _ctsSource = new CancellationTokenSource(); // Reset cancellation token
+            _cts = _ctsSource.Token;
             _fixedCross.Move(_crosshairImage, 360, 360);
             ResetTarget();
         }
@@ -180,17 +179,26 @@ public class TercWindow : Gtk.Window
 
     private async Task RealisticSims()
     {
-        int x, y;
-        ModifierType mask;
+        Random random = new Random();
         while (true)
         {
-            if (cts.IsCancellationRequested)
-                cts.ThrowIfCancellationRequested();
-            x = GetCrosshairPosition().x;
-            y = GetCrosshairPosition().y;
-            x = Math.Max(0, Math.Min(x, 800 - _crosshairImage.Allocation.Width));
-            y = Math.Max(0, Math.Min(y, 900 - _crosshairImage.Allocation.Height));
-            _fixedCross.Move(_crosshairImage, x - 80, y - 80);
+            if (_cts.IsCancellationRequested)
+                _cts.ThrowIfCancellationRequested();
+
+            int x = GetCrosshairPosition().x;
+            int y = GetCrosshairPosition().y;
+
+            int windIntensity = (int)_weather.Value;
+            x += random.Next(-windIntensity/10, windIntensity+1/10);
+            y += random.Next(-windIntensity/10, windIntensity+1/10);
+
+            
+
+            x = Math.Max(0, Math.Min(x, 800 - _crosshairImage.Allocation.Width + 100));
+            y = Math.Max(0, Math.Min(y, 900 - _crosshairImage.Allocation.Height - 80));
+            _fixedCross.Move(_crosshairImage, x, y);
+
+            await Task.Delay(16); 
         }
     }
 
