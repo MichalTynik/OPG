@@ -12,8 +12,10 @@ public class TercWindow : Gtk.Window
     private readonly Image _crosshairImage;
     private Window _window;
     private List<Image> _shotStorage = new List<Image>();
+    
+    Entry _inputField = new Entry();
 
-    private bool _startToggle;
+    private bool _startToggle = false;
     private int _totalScore = 0;
     private Label _scoreLabel;
     private Scale _weatherScale;
@@ -46,7 +48,6 @@ public class TercWindow : Gtk.Window
         _weatherScale = new Scale(Orientation.Horizontal, 0, 10, 1);
         _fatigueScale = new Scale(Orientation.Horizontal, 0, 10, 1);
         Button start = new Button("Start");
-        Entry inputField = new Entry();
         Label fatiqueLabel = new Label("Fatigue");
         Label weatherLabel = new Label("Weather");
         Label windLabel = new Label("Sever");
@@ -60,7 +61,7 @@ public class TercWindow : Gtk.Window
 
         grid.Attach(_weatherScale, 0, 1, 3, 1);
         grid.Attach(_fatigueScale, 0, 3, 3, 1);
-        grid.Attach(inputField, 3, 1, 1, 1);
+        grid.Attach(_inputField, 3, 1, 1, 1);
         grid.Attach(fatiqueLabel, 0, 2, 1, 1);
         grid.Attach(weatherLabel, 0, 0, 1, 1);
         grid.Attach(windLabel, 3, 2, 1, 1);
@@ -76,12 +77,12 @@ public class TercWindow : Gtk.Window
     private async Task MoveCrosshair()
     {
         Random random = new Random();
-        int originalMouseX = 0; // Original mouse X position
-        int originalMouseY = 0; // Original mouse Y position
+        int originalMouseX = 0; 
+        int originalMouseY = 0; 
         int targetX = _crosshairX;
         int targetY = _crosshairY;
 
-        Display.Default.GetPointer(out originalMouseX, out originalMouseY, out ModifierType mask); // initial location of the mouse
+        Display.Default.GetPointer(out originalMouseX, out originalMouseY, out ModifierType mask); 
 
         while (_startToggle)
         {
@@ -94,22 +95,20 @@ public class TercWindow : Gtk.Window
             int offsetX = (int)(random.NextDouble() * 2 * (windFactor + fatigueFactor) - (windFactor + fatigueFactor));
             int offsetY = (int)(random.NextDouble() * 2 * (windFactor + fatigueFactor) - (windFactor + fatigueFactor));
 
-            // Calculate target position based on original mouse position
             targetX = originalMouseX + offsetX - 40;
             targetY = originalMouseY + offsetY - 40;
 
             targetX = Math.Max(0, Math.Min(targetX, 800 - _crosshairImage.Allocation.Width + 100));
             targetY = Math.Max(0, Math.Min(targetY, 900 - _crosshairImage.Allocation.Height - 80));
 
-            // Smooth movement towards target
+            
             _crosshairX = (int)(_crosshairX * 0.95 + targetX * 0.05);
             _crosshairY = (int)(_crosshairY * 0.95 + targetY * 0.05);
 
             Application.Invoke(delegate { _fixedCross.Move(_crosshairImage, _crosshairX - 80, _crosshairY - 80); });
 
-            await Task.Delay(30);
+            await Task.Delay(16);
 
-            // Update original mouse position
             Display.Default.GetPointer(out originalMouseX, out originalMouseY, out mask);
         }
     }
@@ -125,16 +124,28 @@ public class TercWindow : Gtk.Window
         _startToggle = !_startToggle;
         if (_startToggle)
         {
-            _movementTask = Task.Run(MoveCrosshair);
+            
         }
         else
         {
             _movementTask?.Wait();
             _movementTask = null;
-            _crosshairX = 360;
-            _crosshairY = 360;
+            _crosshairX = 440;
+            _crosshairY = 440;
             Application.Invoke(delegate { _fixedCross.Move(_crosshairImage, _crosshairX - 80, _crosshairY - 80); });
             ResetTarget();
+        }
+    }
+    private async Task ShootMultipleTimes(int shotCount)
+    {
+        Random shotRandom = new Random();
+        int middleX = 440;
+        int middleY = 440;
+        int wind = (int)_weatherScale.Value;
+        int fatigue = (int)_fatigueScale.Value;
+        for (int i = 0; i < shotCount; i++)
+        {
+            UpdateImage();
         }
     }
 
@@ -168,8 +179,30 @@ public class TercWindow : Gtk.Window
             _shotStorage.Add(image);
             Random shotRandom = new Random();
             int windIntensity = (int)_weatherScale.Value;
-            int shotX = GetCrosshairPosition().x + shotRandom.Next(-windIntensity / 2, windIntensity / 2);
-            int shotY = GetCrosshairPosition().y + shotRandom.Next(-windIntensity / 2, windIntensity / 2);
+            int shotX = GetCrosshairPosition().x + shotRandom.Next(-windIntensity , windIntensity );
+            int shotY = GetCrosshairPosition().y + shotRandom.Next(-windIntensity , windIntensity );
+            _fixedCross.Put(image, shotX - 20, shotY - 55);
+            image.Show();
+        }
+        catch (GLib.GException e)
+        {
+            Console.WriteLine("Failed to load shot image " + e);
+            throw;
+        }
+    }
+    
+    private void UpdateImage(int x, int y)
+    {
+        try
+        {
+            Pixbuf pix = new Pixbuf("/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/bullet.png");
+            Pixbuf pixScaled = pix.ScaleSimple(50, 50, InterpType.Bilinear);
+            Image image = new Image(pixScaled);
+            _shotStorage.Add(image);
+            Random shotRandom = new Random();
+            int windIntensity = (int)_weatherScale.Value;
+            int shotX = x + shotRandom.Next(-windIntensity , windIntensity );
+            int shotY = y + shotRandom.Next(-windIntensity , windIntensity );
             _fixedCross.Put(image, shotX - 20, shotY - 55);
             image.Show();
         }
