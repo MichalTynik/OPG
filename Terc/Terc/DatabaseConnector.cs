@@ -11,7 +11,7 @@ namespace Terc
         public DatabaseConnector(string port, string address, string username, string password, string database)
         {
             connectionString = $"Server={address};Port={port};Database={database};Uid={username};Pwd={password};";
-            Console.WriteLine($"Connection String: {connectionString}"); // Debugging
+            Console.WriteLine($"Connection String: {connectionString}"); 
             try
             {
                 using (var connection = new MySqlConnection(connectionString))
@@ -26,6 +26,11 @@ namespace Terc
             }
         }
 
+        /// <summary>
+        /// Spusti SQL prikaz
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public DataTable ExecuteQuery(string query)
         {
             DataTable dataTable = new DataTable();
@@ -51,6 +56,9 @@ namespace Terc
         }
     }
 
+    /// <summary>
+    /// Okno na zobrazenie dat z databazy
+    /// </summary>
     public class ShowScoresWindow : Window
     {
         private DatabaseConnector _databaseConnector;
@@ -83,6 +91,9 @@ namespace Terc
             
         }
 
+        /// <summary>
+        /// Nacita udaje z databazy
+        /// </summary>
         private void LoadScores()
         {
             _listStore.Clear();
