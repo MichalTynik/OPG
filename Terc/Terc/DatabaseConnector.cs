@@ -11,7 +11,6 @@ namespace Terc
         public DatabaseConnector(string port, string address, string username, string password, string database)
         {
             connectionString = $"Server={address};Port={port};Database={database};Uid={username};Pwd={password};";
-            Console.WriteLine($"Connection String: {connectionString}"); 
             try
             {
                 using (var connection = new MySqlConnection(connectionString))
