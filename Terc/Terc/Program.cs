@@ -7,19 +7,24 @@ using Window = Gtk.Window;
 using System.Threading.Tasks;
 using System.Runtime.Intrinsics.X86;
 using System.Collections.Generic;
+using Terc;
+using MySqlConnector;
 
 public class TercWindow : Gtk.Window
 {
     readonly string _executableDirectory = AppDomain.CurrentDomain.BaseDirectory;
-    
+
     private readonly Fixed _fixedCross;
     private readonly Image _crosshairImage;
     private Window _window;
     private List<Image> _shotStorage = new List<Image>();
-    
-    Entry _inputField = new Entry();
+
+    private Entry _inputField = new Entry();
+    private Entry _nameEntry = new Entry(); // New Entry for player name
     private bool _startToggle = false;
     private int _totalScore = 0;
+    private int _attempts = 0;
+    private int _bestScore = 0;
     private Label _scoreLabel;
     private Scale _weatherScale;
     private Scale _fatigueScale;
@@ -27,6 +32,7 @@ public class TercWindow : Gtk.Window
     private int _crosshairY = 360; // Aktuálna Y pozícia krížika
     private Task _movementTask; // Úloha pre kontinuálny pohyb
     private int _shotsNumber;
+    private DatabaseConnector _databaseConnector;
 
     public TercWindow() : base("TercWindow")
     {
@@ -45,6 +51,8 @@ public class TercWindow : Gtk.Window
 
         _inputField.Changed += EntryOutput;
         KeyPressEvent += ShotKeyListener;
+
+        _databaseConnector = new DatabaseConnector("3306", "127.0.0.1", "Programator", "Kira.2022", "Terc");
         ShowAll();
     }
 
@@ -57,6 +65,9 @@ public class TercWindow : Gtk.Window
         Label weatherLabel = new Label("Weather");
         Label windLabel = new Label("Sever");
         _scoreLabel = new Label($"Score: {_totalScore}");
+        Button showScoresButton = new Button("Show Scores");
+        showScoresButton.Clicked += OnShowScoresButtonClicked;
+        Label nameLabel = new Label("Player Name:"); // Label for the name entry
 
         start.Pressed += StartOrNull;
 
@@ -72,11 +83,20 @@ public class TercWindow : Gtk.Window
         grid.Attach(windLabel, 3, 2, 1, 1);
         grid.Attach(start, 5, 1, 1, 1);
         grid.Attach(_scoreLabel, 5, 2, 1, 1);
+        grid.Attach(showScoresButton, 0, 5, 6, 1); // Moved down
+        grid.Attach(nameLabel, 0, 4, 1, 1);     // Added name label
+        grid.Attach(_nameEntry, 1, 4, 5, 1);   // Added name entry
 
         VBox vbox = new VBox(false, 0);
         vbox.PackStart(CreateTarget(), true, true, 0);
         vbox.PackStart(grid, false, false, 0);
         return vbox;
+    }
+
+    private void OnShowScoresButtonClicked(object sender, EventArgs e)
+    {
+        ShowScoresWindow scoresWindow = new ShowScoresWindow(_databaseConnector);
+        scoresWindow.ShowAll();
     }
 
     private void EntryOutput(object o, EventArgs args)
@@ -88,51 +108,36 @@ public class TercWindow : Gtk.Window
     private async Task MoveCrosshair()
     {
         Random random = new Random();
-        int originalMouseX = 0; // Pôvodná X pozícia myši
-        int originalMouseY = 0; // Pôvodná Y pozícia myši
+        int originalMouseX = 0;
+        int originalMouseY = 0;
         int targetX = _crosshairX;
         int targetY = _crosshairY;
-
-        // Pre správu času poslednej aktualizácie cieľovej pozície
         DateTime lastTargetUpdate = DateTime.Now;
-
-        // Získaj počiatočnú polohu myši
         Display.Default.GetPointer(out originalMouseX, out originalMouseY, out ModifierType mask);
 
         while (_startToggle)
         {
-            // Aktualizuj cieľovú pozíciu každých 100 ms
             if ((DateTime.Now - lastTargetUpdate).TotalMilliseconds >= 100)
             {
                 int fatigueIntensity = (int)_fatigueScale.Value;
-
                 double fatigueFactor = fatigueIntensity * 20;
-
                 int offsetX = (int)(random.NextDouble() * 2 * (fatigueFactor) - (fatigueFactor));
-                int offsetY = (int)(random.NextDouble() * 2 * ( fatigueFactor) - ( fatigueFactor));
-
-                // Vypočítaj cieľovú pozíciu na základe aktuálnej pozície myši
+                int offsetY = (int)(random.NextDouble() * 2 * (fatigueFactor) - (fatigueFactor));
                 targetX = originalMouseX + offsetX - 40;
                 targetY = originalMouseY + offsetY - 40;
-
                 targetX = Math.Max(0, Math.Min(targetX, 800 - _crosshairImage.Allocation.Width + 100));
                 targetY = Math.Max(0, Math.Min(targetY, 900 - _crosshairImage.Allocation.Height - 80));
-
                 lastTargetUpdate = DateTime.Now;
             }
 
-            // Plynulá interpolácia smerom k cieľovej pozícii (aktuálna pozícia sa spomalene približuje k cieľu)
             _crosshairX = (int)(_crosshairX * 0.98 + targetX * 0.02);
             _crosshairY = (int)(_crosshairY * 0.98 + targetY * 0.02);
 
-            // Aktualizuj pozíciu krížika v UI
             Application.Invoke(delegate {
                 _fixedCross.Move(_crosshairImage, _crosshairX , _crosshairY);
             });
 
             await Task.Delay(8);
-
-            // Aktualizuj aktuálnu polohu myši pre prípad zmeny
             Display.Default.GetPointer(out originalMouseX, out originalMouseY, out mask);
         }
     }
@@ -148,6 +153,7 @@ public class TercWindow : Gtk.Window
         _startToggle = !_startToggle;
         if (_startToggle)
         {
+            _attempts++;
             if (_inputField.Text.Length > 0)
             {
                 for (int i = 0; i < _shotsNumber; i++)
@@ -168,20 +174,27 @@ public class TercWindow : Gtk.Window
             _crosshairX = 360;
             _crosshairY = 360;
             Application.Invoke(delegate { _fixedCross.Move(_crosshairImage, _crosshairX, _crosshairY); });
+            UpdateScoreInDatabase();
             ResetTarget();
         }
     }
-    private async Task ShootMultipleTimes(int shotCount)
+
+    private void UpdateScoreInDatabase()
     {
-        Random shotRandom = new Random();
-        int middleX = 440;
-        int middleY = 440;
-        int wind = (int)_weatherScale.Value;
-        int fatigue = (int)_fatigueScale.Value;
-        for (int i = 0; i < shotCount; i++)
+        string playerName = _nameEntry.Text.Trim(); 
+        if (string.IsNullOrEmpty(playerName))
         {
-            Shot();
+            playerName = "Training"; 
         }
+        string updateQuery = $"INSERT INTO Players (Meno, NajSkore, CelkoveSkore, Pokusy) " +
+                             $"VALUES ('{playerName}', {_bestScore}, {_totalScore}, {_attempts}) " +
+                             $"ON DUPLICATE KEY UPDATE NajSkore = GREATEST(NajSkore, {_bestScore}), " +
+                             $"CelkoveSkore = CelkoveSkore + {_totalScore}, " +
+                             $"Pokusy = Pokusy + {_attempts};";
+        _databaseConnector.ExecuteQuery(updateQuery);
+        _bestScore = 0;
+        _totalScore = 0;
+        _attempts = 0;
     }
 
     private void ResetTarget()
@@ -220,9 +233,9 @@ public class TercWindow : Gtk.Window
             _fixedCross.Put(image, shotX - 20, shotY - 55);
             image.Show();
 
-            _fixedCross.Remove(_crosshairImage); 
-            _fixedCross.Put(_crosshairImage, _crosshairX, _crosshairY); 
-            _crosshairImage.Show(); 
+            _fixedCross.Remove(_crosshairImage);
+            _fixedCross.Put(_crosshairImage, _crosshairX, _crosshairY);
+            _crosshairImage.Show();
         }
         catch (GLib.GException e)
         {
@@ -230,7 +243,7 @@ public class TercWindow : Gtk.Window
             throw;
         }
     }
-    
+
 
     private void CalculateScore()
     {
@@ -240,18 +253,22 @@ public class TercWindow : Gtk.Window
         int centerY = 440;
 
         double distance = Math.Sqrt(Math.Pow(shotX - centerX, 2) + Math.Pow(shotY - centerY, 2));
+        int currentScore = 0;
 
         if (distance <= 80)
-            _totalScore += 5;
+            currentScore = 5;
         else if (distance <= 150)
-            _totalScore += 4;
+            currentScore = 4;
         else if (distance <= 230)
-            _totalScore += 3;
+            currentScore = 3;
         else if (distance <= 310)
-            _totalScore += 2;
+            currentScore = 2;
         else if (distance <= 390)
-            _totalScore += 1;
+            currentScore = 1;
 
+        
+        _totalScore += currentScore;
+        _bestScore = Math.Max(_bestScore, _totalScore);
         _scoreLabel.Text = $"Score: {_totalScore}";
     }
 

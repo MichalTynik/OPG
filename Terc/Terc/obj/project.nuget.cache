@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4BbgwZssV4k=",
+  "dgSpecHash": "dscoGVGnnv8=",
   "success": true,
   "projectFilePath": "/home/michaltynik/Dokumenty/SPSE/OPG/Terc/Terc/Terc.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,9 @@
     "/home/michaltynik/.nuget/packages/gtksharp/3.24.24.117-develop/gtksharp.3.24.24.117-develop.nupkg.sha512",
     "/home/michaltynik/.nuget/packages/linqtools/5.3.0/linqtools.5.3.0.nupkg.sha512",
     "/home/michaltynik/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.2/microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "/home/michaltynik/.nuget/packages/mysqlconnector/2.4.0/mysqlconnector.2.4.0.nupkg.sha512",
     "/home/michaltynik/.nuget/packages/pangosharp/3.24.24.117-develop/pangosharp.3.24.24.117-develop.nupkg.sha512",
     "/home/michaltynik/.nuget/packages/system.linq.async/6.0.1/system.linq.async.6.0.1.nupkg.sha512",
     "/home/michaltynik/.nuget/packages/microsoft.netcore.app.ref/8.0.11/microsoft.netcore.app.ref.8.0.11.nupkg.sha512",

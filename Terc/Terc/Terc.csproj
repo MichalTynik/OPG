@@ -10,6 +10,7 @@
     <ItemGroup>
       <PackageReference Include="GtkDotNet" Version="6.0.4-alpha" />
       <PackageReference Include="GtkSharp" Version="3.24.24.117-develop" />
+      <PackageReference Include="MySqlConnector" Version="2.4.0" />
     </ItemGroup>
 
 </Project>

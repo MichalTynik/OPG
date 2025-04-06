@@ -51,6 +51,10 @@
             "GtkSharp": {
               "target": "Package",
               "version": "[3.24.24.117-develop, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             }
           },
           "imports": [
