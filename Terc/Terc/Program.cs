@@ -10,42 +10,43 @@ using System.Collections.Generic;
 using Terc;
 using MySqlConnector;
 
-public class TercWindow : Gtk.Window
+public class TercWindow : Window
 {
-    readonly string _executableDirectory = AppDomain.CurrentDomain.BaseDirectory;
-
+    private readonly string _executableDirectory = AppDomain.CurrentDomain.BaseDirectory;
     private readonly Fixed _fixedCross;
     private readonly Image _crosshairImage;
-    private readonly string[] _windDir = new[] { "Sever", "Juh", "Zapad", "Vychod" };
-    private Window _window;
-    private List<Image> _shotStorage = new List<Image>();
+    private readonly string[] _windDir = { "Sever", "Juh", "Zapad", "Vychod" };
+    private readonly string[] _probability = { "Normalne", "Rovnomerne" };
+    private readonly DatabaseConnector _databaseConnector;
+    private readonly List<Image> _shotStorage = new List<Image>();
 
+    private Window _window;
     private Entry _inputField = new Entry();
-    private Entry _nameEntry = new Entry(); // New Entry for player name
+    private Entry _nameEntry = new Entry();
     private Button _windButton = new Button();
-    private bool _startToggle = false;
-    private int _totalScore = 0;
-    private int _attempts = 0;
-    private int _bestScore = 0;
+    private Button _toggleButton;
     private Label _scoreLabel;
     private Scale _weatherScale;
     private Scale _fatigueScale;
-    private int _crosshairX = 360; 
-    private int _crosshairY = 360; 
-    private Task _movementTask; 
+    private Task _movementTask;
+
+    private bool _startToggle;
+    private int _totalScore;
+    private int _attempts;
+    private int _bestScore;
     private int _shotsNumber;
+    private int _crosshairX = 360;
+    private int _crosshairY = 360;
     private string _dir = "Sever";
-    private DatabaseConnector _databaseConnector;
 
     public TercWindow() : base("TercWindow")
     {
         _window = this;
-        SetDefaultSize(800, 900);
-        Destroyed += (sender, e) => Application.Quit();
+        SetDefaultSize(600, 700);
         BorderWidth = 10;
-
+        
         _fixedCross = new Fixed();
-        _fixedCross.SetSizeRequest(800, 900);
+        _fixedCross.SetSizeRequest(600, 700);
         Add(_fixedCross);
 
         _fixedCross.Put(CreateVBox(), 0, 0);
@@ -54,7 +55,10 @@ public class TercWindow : Gtk.Window
 
         _inputField.Changed += EntryOutput;
         KeyPressEvent += ShotKeyListener;
-        _windButton.Pressed += WindChanged;
+        _windButton.Pressed += (sender, e) => WindChanged(sender, e, _windButton, _windDir);
+        _toggleButton.Pressed += (sender, e) => WindChanged(sender, e, _toggleButton, _probability);
+        Destroyed += (sender, e) => Application.Quit();
+
         _databaseConnector = new DatabaseConnector("3306", "127.0.0.1", "Programator", "Kira.2022", "Terc");
         ShowAll();
     }
@@ -72,6 +76,7 @@ public class TercWindow : Gtk.Window
         Label weatherLabel = new Label("Vietor");
         _windButton = new Button("Sever");
         _scoreLabel = new Label($"Skore: {_totalScore}");
+        _toggleButton = new Button("Normalne");
         Button showScoresButton = new Button("Tabulka");
         showScoresButton.Clicked += OnShowScoresButtonClicked;
         Label nameLabel = new Label("Meno:"); 
@@ -84,11 +89,12 @@ public class TercWindow : Gtk.Window
 
         grid.Attach(_weatherScale, 0, 1, 9, 1);
         grid.Attach(_fatigueScale, 0, 3, 9, 1);
-        grid.Attach(_inputField, 8, 1, 6, 2);
+        grid.Attach(_inputField, 9, 1, 6, 2);
         grid.Attach(fatigueLabel, 0, 2, 1, 1);
         grid.Attach(weatherLabel, 0, 0, 1, 1);
-        grid.Attach(_windButton, 8, 2, 6, 2);
+        grid.Attach(_windButton, 9, 2, 6, 2);
         grid.Attach(start, 0, 4, 9, 1);
+        grid.Attach(_toggleButton, 9, 4, 6, 1);
         grid.Attach(_scoreLabel, 9, 5, 1, 1);
         grid.Attach(showScoresButton, 0, 6, 9, 1);
         grid.Attach(nameLabel, 0, 5, 1, 1);     
@@ -163,6 +169,49 @@ public class TercWindow : Gtk.Window
         }
     }
 
+    void ShootingProbability()
+    {
+        for (int i = 0; i < _shotsNumber; i++)
+        {
+            try
+            {
+                Pixbuf pix = new Pixbuf(System.IO.Path.Combine(_executableDirectory, "bullet.png"));
+                Pixbuf pixScaled = pix.ScaleSimple(50, 50, InterpType.Bilinear);
+                Image image = new Image(pixScaled);
+                _shotStorage.Add(image);
+
+                Random random = new Random();
+
+                int centerX = 440;
+                int centerY = 440;
+                int maxRadius = 350;
+
+                double angle = random.NextDouble() * 2 * Math.PI;
+                double randomDistance = Math.Sqrt(random.NextDouble()) * maxRadius;
+
+                int shotX = centerX + (int)(randomDistance * Math.Cos(angle));
+                int shotY = centerY + (int)(randomDistance * Math.Sin(angle));
+
+                shotX = Math.Max(50, Math.Min(shotX, 830));
+                shotY = Math.Max(50, Math.Min(shotY, 830));
+
+                _fixedCross.Put(image, shotX - 25, shotY - 25);
+                image.Show();
+
+                _fixedCross.Remove(_crosshairImage);
+                _fixedCross.Put(_crosshairImage, _crosshairX, _crosshairY);
+                _crosshairImage.Show();
+            }
+            catch (GLib.GException e)
+            {
+                Console.WriteLine("Failed to load shot image " + e);
+                throw;
+            }
+        }
+
+        CalculateScore();
+    }
+
     /// <summary>
     /// Ziska a vrati poziciu zameriavaca
     /// </summary>
@@ -180,16 +229,23 @@ public class TercWindow : Gtk.Window
     /// <param name="args"></param>
     public void StartOrNull(object? o, EventArgs args)
     {
+        Label? toggleBString = _toggleButton.Child as Label;
         _startToggle = !_startToggle;
         if (_startToggle)
         {
             _attempts++;
             if (_inputField.Text.Length > 0)
             {
-                for (int i = 0; i < _shotsNumber; i++)
+                if (toggleBString?.Text == "Rovnomerne")
                 {
-                    Shot();
-                    CalculateScore();
+                    ShootingProbability();
+                }
+                else
+                {
+                    for (int i = 0; i < _shotsNumber; i++)
+                    {
+                        Shot();
+                    }
                 }
             }
             else
@@ -214,16 +270,16 @@ public class TercWindow : Gtk.Window
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="args"></param>
-    private void WindChanged(object sender, EventArgs args)
+    private void WindChanged(object sender, EventArgs args, Button btn, string[] labels)
     {
         Random rnd = new Random();
         
         
-        if (_windButton.Child is Gtk.Label label)
+        if (btn.Child is Gtk.Label label)
         {
             do
             {
-            _dir = _windDir[rnd.Next(_windDir.Length)];
+            _dir = labels[rnd.Next(labels.Length)];
             } while (_dir == label.Text);
             label.Text = _dir;
         }
@@ -275,7 +331,6 @@ public class TercWindow : Gtk.Window
         {
             Console.WriteLine("Shot!");
             Shot();
-            CalculateScore();
         }
     }
 
@@ -305,6 +360,7 @@ public class TercWindow : Gtk.Window
             Console.WriteLine("Failed to load shot image " + e);
             throw;
         }
+        CalculateScore();
     }
 
     /// <summary>

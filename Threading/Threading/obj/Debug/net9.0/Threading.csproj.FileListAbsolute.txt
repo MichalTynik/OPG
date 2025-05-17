@@ -1,0 +1,15 @@
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/bin/Debug/net9.0/Threading
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/bin/Debug/net9.0/Threading.deps.json
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/bin/Debug/net9.0/Threading.runtimeconfig.json
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/bin/Debug/net9.0/Threading.dll
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/bin/Debug/net9.0/Threading.pdb
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/Threading.GeneratedMSBuildEditorConfig.editorconfig
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/Threading.AssemblyInfoInputs.cache
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/Threading.AssemblyInfo.cs
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/Threading.csproj.CoreCompileInputs.cache
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/Threading.sourcelink.json
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/Threading.dll
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/refint/Threading.dll
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/Threading.pdb
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/Threading.genruntimeconfig.cache
+/home/michaltynik/Dokumenty/SPSE/OPG/Threading/Threading/obj/Debug/net9.0/ref/Threading.dll
